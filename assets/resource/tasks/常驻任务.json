@@ -12,7 +12,8 @@
             "name": "深渊挑战",
             "entry": "深渊挑战entry",
             "option": [
-                "挂机等待至深渊挑战开启"
+                "挂机等待至深渊挑战开启",
+                "选卡时间"
             ],
             "group": [
                 "常驻任务"
@@ -78,6 +79,30 @@
                     }
                 }
             ]
+        },
+        "选卡时间": {
+            "type": "input",
+            "inputs": [
+                {
+                    "name": "选卡分钟",
+                    "description": "深渊挑战 20:00 开启。填写开启后经过的分钟数，到达该时间后才进行选卡。例如填写 20 表示 20:20 时选卡。范围 0-59。",
+                    "default": "20",
+                    "pipeline_type": "int",
+                    "verify": "^[0-5]?\\d$",
+                    "pattern_msg": "请输入 0-59 的数字"
+                }
+            ],
+            "pipeline_override": {
+                "深渊挑战选卡时间": {
+                    "recognition": {
+                        "param": {
+                            "custom_recognition_param": {
+                                "minute": "{选卡分钟}"
+                            }
+                        }
+                    }
+                }
+            }
         },
         "挂机直到族战开启": {
             "type": "switch",
