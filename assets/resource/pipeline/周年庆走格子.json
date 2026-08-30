@@ -1,0 +1,58 @@
+{
+    "周年庆走格子entry": {
+        "timeout": -1,
+        "desc": "自用",
+        "rate_limit": 0,
+        "next": [
+            "[JumpBack]周年庆走格子点击确定",
+            "[JumpBack]周年庆走格子点击叉叉"
+        ]
+    },
+    "周年庆走格子点击确定": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    481,
+                    427,
+                    343,
+                    238
+                ],
+                "expected": [
+                    "确定"
+                ]
+            }
+        },
+        "pre_delay": 0,
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 400
+    },
+    "周年庆走格子点击叉叉": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1028,
+                    83,
+                    127,
+                    114
+                ],
+                "template": [
+                    "叉叉0.png",
+                    "叉叉1.png",
+                    "叉叉2.png",
+                    "叉叉3.png",
+                    "叉叉4.png",
+                    "叉叉5.png",
+                    "叉叉6.png"
+                ]
+            }
+        },
+        "pre_delay": 0,
+        "action": {
+            "type": "Click"
+        }
+    }
+}
