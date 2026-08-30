@@ -111,6 +111,7 @@
             "[JumpBack]周末活动点击光影忍法帖",
             "[JumpBack]周末活动点击忍界乱斗",
             "[JumpBack]周末活动点击同屏竞速",
+            "[JumpBack]周末活动点击多人竞速",
             "周末活动完成回到了主页面",
             "[JumpBack]周末活动集会所右滑",
             "未知周末活动退回主页面"
@@ -136,6 +137,28 @@
         },
         "next": [
             "光影忍法帖entry"
+        ]
+    },
+    "周末活动点击同屏竞速": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    1275,
+                    300
+                ],
+                "template": [
+                    "同屏竞速.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "同屏竞速entry"
         ]
     },
     "周末活动点击忍界乱斗": {
@@ -285,7 +308,7 @@
             "[JumpBack]back"
         ]
     },
-    "周末活动点击同屏竞速": {
+    "周末活动点击多人竞速": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -296,7 +319,7 @@
                     300
                 ],
                 "template": [
-                    "同屏竞速.png"
+                    "多人竞速.png"
                 ]
             }
         },
@@ -304,7 +327,7 @@
             "type": "Click"
         },
         "next": [
-            "同屏竞速entry"
+            "多人竞速entry"
         ]
     }
 }
