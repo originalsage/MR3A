@@ -1,0 +1,513 @@
+{
+    "多人竞速entry": {
+        "next": [
+            "多人竞速主页面",
+            "[JumpBack]周末活动再次点击多人竞速",
+            "[JumpBack]多人竞速点击前往活动"
+        ]
+    },
+    "多人竞速主页面": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    933,
+                    8,
+                    336,
+                    98
+                ],
+                "expected": [
+                    "每日任务",
+                    "历史战绩"
+                ]
+            }
+        },
+        "next": [
+            "[JumpBack]多人竞速点击准备",
+            "多人竞速识别到多人竞速主页面",
+            "[JumpBack]多人竞速识别到进入了战斗"
+        ]
+    },
+    "多人竞速点击前往活动": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    892,
+                    582,
+                    378,
+                    130
+                ],
+                "expected": [
+                    "跃跃|交给我吧|前往活动|确定"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "周末活动再次点击多人竞速": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    1275,
+                    300
+                ],
+                "template": [
+                    "多人竞速.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "多人竞速点击准备": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    398,
+                    382,
+                    449,
+                    308
+                ],
+                "expected": [
+                    "准备"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "多人竞速识别到进入了战斗": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    10,
+                    560,
+                    162,
+                    159
+                ],
+                "template": [
+                    "进入战斗中.png"
+                ]
+            }
+        },
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "[JumpBack]多人竞速识别到进入了战斗降低识别速度",
+            "多人竞速开始跑酷"
+        ]
+    },
+    "多人竞速识别到进入了战斗降低识别速度": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    10,
+                    560,
+                    162,
+                    159
+                ],
+                "template": [
+                    "进入战斗中.png"
+                ]
+            }
+        },
+        "post_delay": 2000
+    },
+    "多人竞速跑酷点击": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1172,
+                    0,
+                    108,
+                    139
+                ],
+                "expected": [
+                    "米"
+                ]
+            }
+        },
+        "pre_delay": 0,
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "sync_race_parkour",
+                "custom_action_param": {
+                    "skill_phase_chance": 1,
+                    "step_delay_ms": 100,
+                    "swipe_duration_ms": 100
+                }
+            }
+        },
+        "repeat": 5,
+        "repeat_delay": 0,
+        "post_delay": 0
+    },
+    "多人竞速识别到多人竞速主页面": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    975,
+                    10,
+                    295,
+                    106
+                ],
+                "expected": [
+                    "每日任务",
+                    "历史战绩"
+                ]
+            }
+        },
+        "next": [
+            "多人竞速点击每日任务"
+        ]
+    },
+    "多人竞速点击每日任务": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    907,
+                    1,
+                    370,
+                    131
+                ],
+                "expected": [
+                    "每日任务"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    0,
+                    -45,
+                    0,
+                    0
+                ]
+            }
+        },
+        "post_delay": 1500,
+        "next": [
+            "多人竞速点开了每日任务",
+            "多人竞速点击每日任务"
+        ]
+    },
+    "多人竞速点开了每日任务": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    468,
+                    38,
+                    341,
+                    139
+                ],
+                "expected": [
+                    "每日任务"
+                ]
+            }
+        },
+        "next": [
+            "[JumpBack]多人竞速点击确定",
+            "[JumpBack]多人竞速点击一键领取",
+            "多人竞速任务已完成",
+            "多人竞速任务未完成"
+        ]
+    },
+    "多人竞速点击一键领取": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    989,
+                    636,
+                    284,
+                    83
+                ],
+                "expected": [
+                    "键领取"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 1000
+    },
+    "多人竞速点击确定": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    484,
+                    566,
+                    317,
+                    143
+                ],
+                "expected": [
+                    "确定"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 1000
+    },
+    "多人竞速任务未完成": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1210,
+                    603,
+                    51,
+                    57
+                ]
+            }
+        },
+        "next": [
+            "[JumpBack]多人竞速关闭每日任务",
+            "[JumpBack]多人竞速点击准备",
+            "[JumpBack]多人竞速点击开始比赛",
+            "[JumpBack]多人竞速等待开始比赛",
+            "多人竞速识别到进入了战斗"
+        ]
+    },
+    "多人竞速任务已完成": {
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "多人竞速任务0已完成",
+                    "多人竞速任务1已完成",
+                    "多人竞速任务2已完成",
+                    "多人竞速任务3已完成"
+                ]
+            }
+        },
+        "next": [
+            "多人竞速完成回到了主页面",
+            "[JumpBack]back"
+        ]
+    },
+    "多人竞速关闭每日任务": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    443,
+                    48,
+                    304,
+                    132
+                ],
+                "expected": [
+                    "每日任务"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1202,
+                    614,
+                    62,
+                    73
+                ]
+            }
+        },
+        "post_delay": 1000
+    },
+    "多人竞速点击开始比赛": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    846,
+                    590,
+                    314,
+                    128
+                ],
+                "expected": [
+                    "开始",
+                    "比赛"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 1000
+    },
+    "多人竞速等待开始比赛": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    842,
+                    611,
+                    419,
+                    108
+                ],
+                "expected": [
+                    "匹配中",
+                    "后可进入"
+                ]
+            }
+        },
+        "post_delay": 1000
+    },
+    "多人竞速等待战斗结束": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    489,
+                    604,
+                    316,
+                    109
+                ],
+                "expected": [
+                    "返回"
+                ]
+            }
+        },
+        "post_delay": 1000
+    },
+    "多人竞速战斗结束点击继续": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    509,
+                    485,
+                    760,
+                    232
+                ],
+                "expected": [
+                    "继续$",
+                    "^确定$"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "多人竞速开始跑酷": {
+        "pre_delay": 0,
+        "post_delay": 0,
+        "rate_limit": 0,
+        "next": [
+            "[JumpBack]多人竞速跑酷点击",
+            "[JumpBack]多人竞速等待战斗结束",
+            "[JumpBack]多人竞速战斗结束点击继续",
+            "多人竞速识别到多人竞速主页面"
+        ]
+    },
+    "多人竞速任务0已完成": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    961,
+                    155,
+                    161,
+                    98
+                ],
+                "expected": [
+                    "已领取"
+                ]
+            }
+        },
+        "pre_delay": 0,
+        "post_delay": 0
+    },
+    "多人竞速任务1已完成": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    961,
+                    264,
+                    161,
+                    98
+                ],
+                "expected": [
+                    "已领取"
+                ]
+            }
+        },
+        "pre_delay": 0,
+        "post_delay": 0
+    },
+    "多人竞速任务2已完成": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    961,
+                    371,
+                    161,
+                    98
+                ],
+                "expected": [
+                    "已领取"
+                ]
+            }
+        },
+        "pre_delay": 0,
+        "post_delay": 0
+    },
+    "多人竞速任务3已完成": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    961,
+                    482,
+                    161,
+                    98
+                ],
+                "expected": [
+                    "已领取"
+                ]
+            }
+        },
+        "pre_delay": 0,
+        "post_delay": 0
+    },
+    "多人竞速完成回到了主页面": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    4,
+                    136,
+                    434,
+                    459
+                ],
+                "template": [
+                    "主页面.png"
+                ],
+                "green_mask": true
+            }
+        }
+    }
+}
