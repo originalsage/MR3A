@@ -32,6 +32,13 @@
             "description": "<span style=\"color:deepskyblue;font-size:15px\">系统会先判断当前是否为<strong>周六、周日</strong>，非周末将<strong>直接跳过</strong>。</span>"
         },
         {
+            "name": "备战副本",
+            "entry": "备战副本entry",
+            "group": [
+                "常驻任务"
+            ]
+        },
+        {
             "name": "地区首领",
             "entry": "地区首领entry",
             "group": [

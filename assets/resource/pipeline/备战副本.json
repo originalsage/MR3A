@@ -1,0 +1,961 @@
+{
+    "备战副本核心节点": {
+        "pre_delay": 0,
+        "post_delay": 0,
+        "timeout": 60000,
+        "rate_limit": 0,
+        "next": [
+            "[JumpBack]备战副本下滑",
+            "[JumpBack]备战副本识别到奖励入口",
+            "[JumpBack]备战副本点击接力",
+            "[JumpBack]备战副本接力跳过",
+            "[JumpBack]备战副本点击继续"
+        ]
+    },
+    "备战副本下滑": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    495,
+                    12,
+                    293,
+                    80
+                ],
+                "expected": [
+                    "收集金币",
+                    "消灭河豚",
+                    "收集礼带",
+                    "拯救神木",
+                    "\\d分",
+                    "消灭蝙蝠",
+                    "切西瓜",
+                    "守护春日"
+                ]
+            }
+        },
+        "pre_delay": 0,
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    193,
+                    588,
+                    16,
+                    16
+                ],
+                "end": [
+                    [
+                        193,
+                        636,
+                        16,
+                        16
+                    ]
+                ]
+            }
+        },
+        "post_delay": 0,
+        "next": [
+            "备战副本跳1"
+        ]
+    },
+    "备战副本跳1": {
+        "pre_delay": 0,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1025,
+                    602,
+                    28,
+                    29
+                ]
+            }
+        },
+        "next": [
+            "备战副本跳2"
+        ]
+    },
+    "备战副本跳2": {
+        "pre_delay": 0,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1025,
+                    602,
+                    28,
+                    29
+                ]
+            }
+        },
+        "post_delay": 0,
+        "next": [
+            "备战副本主武器"
+        ]
+    },
+    "备战副本主武器": {
+        "pre_delay": 0,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    354,
+                    604,
+                    51,
+                    44
+                ]
+            }
+        },
+        "post_delay": 0,
+        "next": [
+            "备战副本卡牌"
+        ]
+    },
+    "备战副本卡牌": {
+        "pre_delay": 0,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    485,
+                    569,
+                    272,
+                    110
+                ]
+            }
+        },
+        "post_delay": 0,
+        "next": [
+            "备战副本大招原点"
+        ]
+    },
+    "备战副本大招原点": {
+        "pre_delay": 0,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    40,
+                    300,
+                    95,
+                    89
+                ]
+            }
+        },
+        "post_delay": 0,
+        "next": [
+            "备战副本小椒1"
+        ]
+    },
+    "备战副本小椒1": {
+        "pre_delay": 0,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    141,
+                    233,
+                    89,
+                    87
+                ]
+            }
+        },
+        "post_delay": 0
+    },
+    "备战副本点击接力": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    338,
+                    250,
+                    631,
+                    268
+                ],
+                "expected": [
+                    "LV"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "备战副本接力跳过": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    527,
+                    638,
+                    227,
+                    83
+                ],
+                "expected": [
+                    "^跳过$"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 1000
+    },
+    "备战副本点击继续": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    478,
+                    592,
+                    357,
+                    127
+                ],
+                "expected": [
+                    "继续$"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 1000
+    },
+    "备战副本识别到奖励入口": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    417,
+                    379,
+                    763,
+                    127
+                ],
+                "expected": [
+                    "奖励"
+                ]
+            }
+        },
+        "next": [
+            "备战副本第一关",
+            "备战副本第二关",
+            "备战副本第三关",
+            "备战副本完成"
+        ]
+    },
+    "备战副本点开了第一关": {
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "OcrConsistency",
+                "custom_recognition_param": {
+                    "roi_a": [
+                        200,
+                        500,
+                        200,
+                        150
+                    ],
+                    "roi_b": [
+                        200,
+                        80,
+                        250,
+                        100
+                    ],
+                    "threshold": 0.3,
+                    "strict": false,
+                    "return_box": "a"
+                }
+            }
+        },
+        "next": [
+            "备战副本第一关点击奖励入口"
+        ]
+    },
+    "备战副本第一关": {
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "备战副本点开了第一关",
+            "[JumpBack]备战副本没点开第一关"
+        ]
+    },
+    "备战副本第二关": {
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "备战副本点开了第二关",
+            "[JumpBack]备战副本没点开第二关"
+        ]
+    },
+    "备战副本第三关": {
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "备战副本点开了第三关",
+            "[JumpBack]备战副本没点开第三关"
+        ]
+    },
+    "备战副本没点开第一关": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    432,
+                    392,
+                    741,
+                    99
+                ],
+                "expected": [
+                    "奖励"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    196,
+                    588,
+                    172,
+                    100
+                ]
+            }
+        }
+    },
+    "备战副本点开了第二关": {
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "OcrConsistency",
+                "custom_recognition_param": {
+                    "roi_a": [
+                        550,
+                        500,
+                        200,
+                        150
+                    ],
+                    "roi_b": [
+                        200,
+                        80,
+                        250,
+                        100
+                    ],
+                    "threshold": 0.3,
+                    "strict": false,
+                    "return_box": "a"
+                }
+            }
+        },
+        "next": [
+            "备战副本第二关点击奖励入口"
+        ]
+    },
+    "备战副本没点开第二关": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    432,
+                    392,
+                    741,
+                    99
+                ],
+                "expected": [
+                    "奖励"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    566,
+                    588,
+                    172,
+                    100
+                ]
+            }
+        }
+    },
+    "备战副本点开了第三关": {
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "OcrConsistency",
+                "custom_recognition_param": {
+                    "roi_a": [
+                        930,
+                        500,
+                        200,
+                        150
+                    ],
+                    "roi_b": [
+                        200,
+                        80,
+                        250,
+                        100
+                    ],
+                    "threshold": 0.3,
+                    "strict": false,
+                    "return_box": "a"
+                }
+            }
+        },
+        "next": [
+            "备战副本第三关点击奖励入口"
+        ]
+    },
+    "备战副本没点开第三关": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    432,
+                    392,
+                    741,
+                    99
+                ],
+                "expected": [
+                    "奖励"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    966,
+                    588,
+                    172,
+                    100
+                ]
+            }
+        }
+    },
+    "备战副本第一关点击奖励入口": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    432,
+                    392,
+                    741,
+                    99
+                ],
+                "expected": [
+                    "奖励"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    -40,
+                    0,
+                    0,
+                    0
+                ]
+            }
+        },
+        "post_delay": 1500,
+        "next": [
+            "备战副本第一关点开了奖励入口",
+            "备战副本第一关点击奖励入口"
+        ]
+    },
+    "备战副本第二关点击奖励入口": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    432,
+                    392,
+                    741,
+                    99
+                ],
+                "expected": [
+                    "奖励"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    -40,
+                    0,
+                    0,
+                    0
+                ]
+            }
+        },
+        "post_delay": 1500,
+        "next": [
+            "备战副本第二关点开了奖励入口",
+            "备战副本第二关点击奖励入口"
+        ]
+    },
+    "备战副本第三关点击奖励入口": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    432,
+                    392,
+                    741,
+                    99
+                ],
+                "expected": [
+                    "奖励"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    -40,
+                    0,
+                    0,
+                    0
+                ]
+            }
+        },
+        "post_delay": 1500,
+        "next": [
+            "备战副本第三关点开了奖励入口",
+            "备战副本第三关点击奖励入口"
+        ]
+    },
+    "备战副本第一关点开了奖励入口": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    477,
+                    148,
+                    314,
+                    127
+                ],
+                "expected": [
+                    "奖励信息"
+                ]
+            }
+        },
+        "next": [
+            "[JumpBack]备战副本点击领取奖励确定",
+            "[JumpBack]备战副本点击领取奖励",
+            "备战副本未完成",
+            "备战副本第一关已完成"
+        ]
+    },
+    "备战副本未完成": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    803,
+                    373,
+                    197,
+                    127
+                ],
+                "expected": [
+                    "^领取$"
+                ]
+            }
+        },
+        "next": [
+            "[JumpBack]备战副本未完成点击挑战",
+            "备战副本未完成没发现挑战按钮"
+        ]
+    },
+    "备战副本第一关已完成": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    803,
+                    373,
+                    197,
+                    127
+                ],
+                "expected": [
+                    "^已领取$"
+                ]
+            }
+        },
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "DisableNode",
+                "custom_action_param": {
+                    "node_name": "备战副本第一关"
+                }
+            }
+        },
+        "next": [
+            "[JumpBack]备战副本已完成点击关闭奖励信息",
+            "备战副本已完成没发现奖励信息"
+        ]
+    },
+    "备战副本第二关点开了奖励入口": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    477,
+                    148,
+                    314,
+                    127
+                ],
+                "expected": [
+                    "奖励信息"
+                ]
+            }
+        },
+        "next": [
+            "[JumpBack]备战副本点击领取奖励确定",
+            "[JumpBack]备战副本点击领取奖励",
+            "备战副本未完成",
+            "备战副本第二关已完成"
+        ]
+    },
+    "备战副本第三关点开了奖励入口": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    477,
+                    148,
+                    314,
+                    127
+                ],
+                "expected": [
+                    "奖励信息"
+                ]
+            }
+        },
+        "next": [
+            "[JumpBack]备战副本点击领取奖励确定",
+            "[JumpBack]备战副本点击领取奖励",
+            "备战副本未完成",
+            "备战副本第三关已完成"
+        ]
+    },
+    "备战副本点击领取奖励": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    824,
+                    243,
+                    179,
+                    268
+                ],
+                "expected": [
+                    "领取奖励"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "备战副本点击领取奖励确定": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    501,
+                    552,
+                    298,
+                    159
+                ],
+                "expected": [
+                    "确定"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 1500
+    },
+    "备战副本未完成点击挑战": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    998,
+                    400,
+                    154,
+                    94
+                ],
+                "expected": [
+                    "挑战"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "备战副本未完成没发现挑战按钮": {},
+    "备战副本第二关已完成": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    803,
+                    373,
+                    197,
+                    127
+                ],
+                "expected": [
+                    "^已领取$"
+                ]
+            }
+        },
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "DisableNode",
+                "custom_action_param": {
+                    "node_name": "备战副本第二关"
+                }
+            }
+        },
+        "next": [
+            "[JumpBack]备战副本已完成点击关闭奖励信息",
+            "备战副本已完成没发现奖励信息"
+        ]
+    },
+    "备战副本第三关已完成": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    803,
+                    373,
+                    197,
+                    127
+                ],
+                "expected": [
+                    "^已领取$"
+                ]
+            }
+        },
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "DisableNode",
+                "custom_action_param": {
+                    "node_name": "备战副本第三关"
+                }
+            }
+        },
+        "next": [
+            "[JumpBack]备战副本已完成点击关闭奖励信息",
+            "备战副本已完成没发现奖励信息"
+        ]
+    },
+    "备战副本已完成点击关闭奖励信息": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    535,
+                    173,
+                    217,
+                    98
+                ],
+                "expected": [
+                    "奖励信息"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    536,
+                    40,
+                    195,
+                    82
+                ]
+            }
+        }
+    },
+    "备战副本已完成没发现奖励信息": {},
+    "备战副本entry": {
+        "next": [
+            "[JumpBack]备战副本入口",
+            "备战副本任务出错"
+        ]
+    },
+    "备战副本任务出错": {
+        "focus": "任务出错：每日悬赏❌"
+    },
+    "备战副本入口": {
+        "max_hit": 3,
+        "next": [
+            "重置备战副本内部节点计数器"
+        ]
+    },
+    "备战副本确认在主页面": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    500,
+                    712
+                ],
+                "template": [
+                    "主页面.png"
+                ],
+                "green_mask": true
+            }
+        },
+        "next": [
+            "尝试进入备战副本主页"
+        ]
+    },
+    "重置备战副本内部节点计数器": {
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "ResetCount"
+            }
+        },
+        "next": [
+            "备战副本确认在主页面",
+            "备战副本主页面",
+            "[JumpBack]back"
+        ]
+    },
+    "尝试进入备战副本主页": {
+        "next": [
+            "[JumpBack]备战副本进入家族",
+            "[JumpBack]备战副本从家族进入冒险页面",
+            "[JumpBack]备战副本点击备战副本",
+            "备战副本主页面"
+        ]
+    },
+    "备战副本主页面": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    920,
+                    19,
+                    347,
+                    163
+                ],
+                "expected": [
+                    "备战排行",
+                    "本周最佳录像"
+                ]
+            }
+        },
+        "next": [
+            "备战副本核心节点"
+        ]
+    },
+    "备战副本从家族进入冒险页面": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    953,
+                    601,
+                    327,
+                    117
+                ],
+                "expected": [
+                    "家族换装|家族荣誉"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1162,
+                    345,
+                    30,
+                    50
+                ]
+            }
+        }
+    },
+    "备战副本进入家族": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    747,
+                    73,
+                    419,
+                    645
+                ],
+                "template": [
+                    "家族.png"
+                ],
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "备战副本完成": {
+        "next": [
+            "备战副本完成回到了主页面",
+            "[JumpBack]back"
+        ]
+    },
+    "备战副本完成回到了主页面": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    4,
+                    136,
+                    434,
+                    459
+                ],
+                "template": [
+                    "主页面.png"
+                ],
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "StopTask"
+        },
+        "focus": "任务完成：备战副本✅"
+    },
+    "备战副本点击备战副本": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    256,
+                    493,
+                    368,
+                    135
+                ],
+                "expected": [
+                    "备战副本"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    }
+}
