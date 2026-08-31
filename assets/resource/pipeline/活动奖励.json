@@ -263,25 +263,6 @@
     },
     "猫太酬宾礼": {
         "recognition": {
-            "type": "And",
-            "param": {
-                "all_of": [
-                    "猫太酬宾礼文字",
-                    "猫太酬宾礼有红点"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "post_delay": 500,
-        "next": [
-            "进入了猫太酬宾礼",
-            "猫太酬宾礼"
-        ]
-    },
-    "猫太酬宾礼文字": {
-        "recognition": {
             "type": "OCR",
             "param": {
                 "roi": [
@@ -294,24 +275,15 @@
                     "猫太酬宾礼"
                 ]
             }
-        }
-    },
-    "猫太酬宾礼有红点": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": "猫太酬宾礼文字",
-                "roi_offset": [
-                    120,
-                    -63,
-                    -49,
-                    40
-                ],
-                "template": [
-                    "红点1.png"
-                ]
-            }
-        }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 500,
+        "next": [
+            "进入了猫太酬宾礼",
+            "猫太酬宾礼"
+        ]
     },
     "祈TA宠爱": {
         "recognition": {
