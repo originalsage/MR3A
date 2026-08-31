@@ -34,6 +34,9 @@
         {
             "name": "备战副本",
             "entry": "备战副本entry",
+            "option": [
+                "免费接力"
+            ],
             "group": [
                 "常驻任务"
             ]
@@ -216,6 +219,30 @@
                     "label": "关闭",
                     "pipeline_override": {
                         "召令悬赏需要刷SS+": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "免费接力": {
+            "type": "switch",
+            "default_case": "Yes",
+            "cases": [
+                {
+                    "name": "Yes",
+                    "label": "开启",
+                    "pipeline_override": {
+                        "备战副本点击接力": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "No",
+                    "label": "关闭",
+                    "pipeline_override": {
+                        "备战副本点击接力": {
                             "enabled": false
                         }
                     }
