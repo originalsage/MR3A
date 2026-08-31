@@ -102,6 +102,7 @@
                 ]
             }
         },
+        "pre_delay": 0,
         "action": {
             "type": "Click"
         },
@@ -109,7 +110,7 @@
             "time": 500,
             "threshold": 0.8
         },
-        "post_delay": 500,
+        "post_delay": 900,
         "rate_limit": 100,
         "next": [
             "点击一些返回按钮",
@@ -199,6 +200,7 @@
                 ]
             }
         },
+        "pre_delay": 0,
         "action": {
             "type": "Click"
         },
@@ -206,7 +208,7 @@
             "time": 500,
             "threshold": 0.8
         },
-        "post_delay": 200,
+        "post_delay": 600,
         "rate_limit": 100,
         "next": [
             "再次点击左上角退出",
