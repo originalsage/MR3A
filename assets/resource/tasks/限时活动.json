@@ -963,14 +963,6 @@
                         "清凡品藏宝图次数"
                     ],
                     "pipeline_override": {
-                        "刷别人的藏宝图": {
-                            "attach": {
-                                "神品云之国": true,
-                                "神品海之国": true,
-                                "神品神炎国": true,
-                                "神品雷王山": true
-                            }
-                        },
                         "藏宝图entry": {
                             "enabled": true
                         },

@@ -160,7 +160,7 @@ class RemoveQualityFromAttach(CustomAction):
         attach = dict(config_node.get("attach", {})) if config_node else {}
 
         if not attach:
-            logger.info(f"RemoveQualityFromAttach: {node_name}.attach 为空，无需操作")
+            logger.debug(f"RemoveQualityFromAttach: {node_name}.attach 为空，无需操作")
             return CustomAction.RunResult(success=True)
 
         # 将该品质的所有条目设为 false（dict merge 会覆盖同名 key）
