@@ -187,6 +187,7 @@
     "忍币商店没有MAX": {
         "next": [
             "再次确认是花费忍币并点击购买",
+            "再次确认是花费勾玉并点击购买",
             "忍币商店点击空白处"
         ]
     },
@@ -229,6 +230,7 @@
         },
         "next": [
             "再次确认是花费忍币并点击购买",
+            "再次确认是花费勾玉并点击购买",
             "忍币商店点击空白处"
         ]
     },
@@ -581,6 +583,12 @@
                 "custom_recognition_param": {
                     "target": 1
                 }
+            }
+        },
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "ApplyMysteryShopFragmentConfig"
             }
         },
         "next": [
@@ -1135,6 +1143,7 @@
         "next": [
             "神秘商店商品7没有剩余次数",
             "神秘商店商品7有忍币图标",
+            "神秘商店商品7是配置碎片",
             "神秘商店商品7没有忍币图标"
         ]
     },
@@ -1185,6 +1194,89 @@
     "神秘商店商品7没有忍币图标": {
         "pre_delay": 0,
         "post_delay": 0
+    },
+    "神秘商店商品7是配置碎片": {
+        "enabled": false,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    726,
+                    376,
+                    220,
+                    48
+                ],
+                "expected": [
+                    "不购买碎片"
+                ],
+                "replace": [
+                    [" ", ""],
+                    ["　", ""]
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [0, 160, 0, 50]
+            }
+        },
+        "post_delay": 300,
+        "next": [
+            "神秘商店商品0购买页面"
+        ]
+    },
+    "勾玉购买忍者碎片配置": {
+        "attach": {}
+    },
+    "再次确认是花费勾玉并点击购买": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    481,
+                    449,
+                    193,
+                    270
+                ],
+                "template": [
+                    "神秘商店勾玉1.png"
+                ],
+                "threshold": [
+                    0.8
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": "忍币商品识别到购买"
+            }
+        },
+        "next": [
+            "神秘商店购买确定",
+            "神秘商店勾玉不足",
+            "忍币商店点击空白处"
+        ]
+    },
+    "神秘商店勾玉不足": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    513,
+                    76,
+                    241,
+                    98
+                ],
+                "expected": [
+                    "勾玉不足"
+                ]
+            }
+        },
+        "next": [
+            "忍币商店点击空白处"
+        ]
     },
     "神秘商店忍币不足": {
         "recognition": {

@@ -615,7 +615,8 @@
                     "name": "Yes",
                     "label": "开启",
                     "option": [
-                        "每日勾玉刷新次数"
+                        "每日勾玉刷新次数",
+                        "勾玉购买忍者碎片"
                     ]
                 },
                 {
@@ -624,6 +625,294 @@
                     "pipeline_override": {
                         "神秘商店任务": {
                             "enable": false
+                        }
+                    }
+                }
+            ]
+        },
+        "勾玉购买忍者碎片": {
+            "type": "checkbox",
+            "label": "勾玉购买忍者碎片",
+            "description": "勾选后，神秘商店会购买这些忍者的碎片，用勾玉付款。选项是流派加忍者的全名，和商店卡面一致。",
+            "default_case": [],
+            "cases": [
+                {
+                    "name": "双焰·小椒",
+                    "pipeline_override": {
+                        "勾玉购买忍者碎片配置": {
+                            "attach": {
+                                "双焰·小椒": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "星闪·小椒",
+                    "pipeline_override": {
+                        "勾玉购买忍者碎片配置": {
+                            "attach": {
+                                "星闪·小椒": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "神炎·小椒",
+                    "pipeline_override": {
+                        "勾玉购买忍者碎片配置": {
+                            "attach": {
+                                "神炎·小椒": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "炎魂·小黑",
+                    "pipeline_override": {
+                        "勾玉购买忍者碎片配置": {
+                            "attach": {
+                                "炎魂·小黑": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "龙焰·小黑",
+                    "pipeline_override": {
+                        "勾玉购买忍者碎片配置": {
+                            "attach": {
+                                "龙焰·小黑": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "冰羽·兮兰",
+                    "pipeline_override": {
+                        "勾玉购买忍者碎片配置": {
+                            "attach": {
+                                "冰羽·兮兰": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "寒绡·兮兰",
+                    "pipeline_override": {
+                        "勾玉购买忍者碎片配置": {
+                            "attach": {
+                                "寒绡·兮兰": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "瞬翎·伊鹤",
+                    "pipeline_override": {
+                        "勾玉购买忍者碎片配置": {
+                            "attach": {
+                                "瞬翎·伊鹤": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "霜刃·伊鹤",
+                    "pipeline_override": {
+                        "勾玉购买忍者碎片配置": {
+                            "attach": {
+                                "霜刃·伊鹤": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "奔雷·银枭",
+                    "pipeline_override": {
+                        "勾玉购买忍者碎片配置": {
+                            "attach": {
+                                "奔雷·银枭": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "雷羿·银枭",
+                    "pipeline_override": {
+                        "勾玉购买忍者碎片配置": {
+                            "attach": {
+                                "雷羿·银枭": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "超威·阿力",
+                    "pipeline_override": {
+                        "勾玉购买忍者碎片配置": {
+                            "attach": {
+                                "超威·阿力": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "雷兽·阿力",
+                    "pipeline_override": {
+                        "勾玉购买忍者碎片配置": {
+                            "attach": {
+                                "雷兽·阿力": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "绯斩·苍牙",
+                    "pipeline_override": {
+                        "勾玉购买忍者碎片配置": {
+                            "attach": {
+                                "绯斩·苍牙": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "鬼狩·苍牙",
+                    "pipeline_override": {
+                        "勾玉购买忍者碎片配置": {
+                            "attach": {
+                                "鬼狩·苍牙": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "神乐·琳",
+                    "pipeline_override": {
+                        "勾玉购买忍者碎片配置": {
+                            "attach": {
+                                "神乐·琳": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "雪舞·琳",
+                    "pipeline_override": {
+                        "勾玉购买忍者碎片配置": {
+                            "attach": {
+                                "雪舞·琳": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "不知火·舞",
+                    "pipeline_override": {
+                        "勾玉购买忍者碎片配置": {
+                            "attach": {
+                                "不知火·舞": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "剑心·卫鲤",
+                    "pipeline_override": {
+                        "勾玉购买忍者碎片配置": {
+                            "attach": {
+                                "剑心·卫鲤": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "夜叉·隼白",
+                    "pipeline_override": {
+                        "勾玉购买忍者碎片配置": {
+                            "attach": {
+                                "夜叉·隼白": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "月晖·小夜",
+                    "pipeline_override": {
+                        "勾玉购买忍者碎片配置": {
+                            "attach": {
+                                "月晖·小夜": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "樱火·荧",
+                    "pipeline_override": {
+                        "勾玉购买忍者碎片配置": {
+                            "attach": {
+                                "樱火·荧": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "猫太·老板娘",
+                    "pipeline_override": {
+                        "勾玉购买忍者碎片配置": {
+                            "attach": {
+                                "猫太·老板娘": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "鬼斩·紫原",
+                    "pipeline_override": {
+                        "勾玉购买忍者碎片配置": {
+                            "attach": {
+                                "鬼斩·紫原": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "龙吟·洛青",
+                    "pipeline_override": {
+                        "勾玉购买忍者碎片配置": {
+                            "attach": {
+                                "龙吟·洛青": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "风铭·戌时",
+                    "pipeline_override": {
+                        "勾玉购买忍者碎片配置": {
+                            "attach": {
+                                "风铭·戌时": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "乘霄·戌时",
+                    "pipeline_override": {
+                        "勾玉购买忍者碎片配置": {
+                            "attach": {
+                                "乘霄·戌时": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "极刃·血影",
+                    "pipeline_override": {
+                        "勾玉购买忍者碎片配置": {
+                            "attach": {
+                                "极刃·血影": true
+                            }
                         }
                     }
                 }
