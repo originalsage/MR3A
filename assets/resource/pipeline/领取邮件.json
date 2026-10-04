@@ -4,13 +4,13 @@
             "type": "OCR",
             "param": {
                 "roi": [
-                    541,
-                    592,
-                    206,
-                    103
+                    451,
+                    542,
+                    377,
+                    175
                 ],
                 "expected": [
-                    "确定"
+                    "^确定$"
                 ]
             }
         },
@@ -178,33 +178,24 @@
     "领取邮件任务出错": {
         "focus": "任务出错：领取邮件❌"
     },
+    "领取邮件任务完成": {
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "DisableNode",
+                "custom_action_param": {
+                    "node_name": "领取邮件入口"
+                }
+            }
+        },
+        "focus": "任务完成：领取邮件✅"
+    },
     "领取邮件入口": {
         "max_hit": 3,
         "next": [
             "重置领取邮件内部节点计数器"
         ]
     },
-    "领取邮件检查主页面": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    0,
-                    0,
-                    500,
-                    712
-                ],
-                "template": [
-                    "主页面.png"
-                ],
-                "green_mask": true
-            }
-        },
-        "next": [
-            "识别并点击邮件"
-        ]
-    },
-    "领取邮件完成": {},
     "领取邮件回到了主页面": {
         "recognition": {
             "type": "TemplateMatch",
@@ -234,16 +225,25 @@
             "领取邮件任务完成"
         ]
     },
-    "领取邮件任务完成": {
-        "action": {
-            "type": "Custom",
+    "领取邮件完成": {},
+    "领取邮件检查主页面": {
+        "recognition": {
+            "type": "TemplateMatch",
             "param": {
-                "custom_action": "DisableNode",
-                "custom_action_param": {
-                    "node_name": "领取邮件入口"
-                }
+                "roi": [
+                    0,
+                    0,
+                    500,
+                    712
+                ],
+                "template": [
+                    "主页面.png"
+                ],
+                "green_mask": true
             }
         },
-        "focus": "任务完成：领取邮件✅"
+        "next": [
+            "识别并点击邮件"
+        ]
     }
 }
