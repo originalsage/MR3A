@@ -1,4 +1,23 @@
 {
+    "没有今日免费祈福": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    124,
+                    558,
+                    354,
+                    139
+                ],
+                "expected": [
+                    "祈福"
+                ]
+            }
+        },
+        "next": [
+            "转盘返回"
+        ]
+    },
     "今日免费祈福": {
         "recognition": {
             "type": "OCR",
@@ -24,24 +43,11 @@
     "家族祈福entry": {
         "next": [
             "[JumpBack]家族祈福入口",
-            "家族祈福任务出错",
-            "家族祈福完成"
+            "家族祈福任务出错"
         ]
     },
     "家族祈福任务出错": {
         "focus": "任务出错：家族祈福❌"
-    },
-    "家族祈福任务完成": {
-        "action": {
-            "type": "Custom",
-            "param": {
-                "custom_action": "DisableNode",
-                "custom_action_param": {
-                    "node_name": "家族祈福入口"
-                }
-            }
-        },
-        "focus": "任务完成：家族祈福✅"
     },
     "家族祈福入口": {
         "max_hit": 3,
@@ -66,19 +72,10 @@
             }
         },
         "action": {
-            "type": "Custom",
-            "param": {
-                "custom_action": "DisableNode",
-                "custom_action_param": {
-                    "node_name": "家族祈福任务出错"
-                }
-            }
+            "type": "StopTask"
         },
-        "next": [
-            "家族祈福任务完成"
-        ]
+        "focus": "任务完成：家族祈福✅"
     },
-    "家族祈福完成": {},
     "家族祈福转盘": {
         "recognition": {
             "type": "TemplateMatch",
@@ -90,16 +87,17 @@
                     103
                 ],
                 "template": [
-                    "家族祈福转盘.png"
+                    "家族祈福转盘默认.png",
+                    "家族祈福转盘周年庆典.png"
                 ]
             }
         },
-        "timeout": 1000,
+        "action": {
+            "type": "Click"
+        },
         "next": [
-            "转盘红点"
-        ],
-        "on_error": [
-            "没有红点"
+            "今日免费祈福",
+            "没有今日免费祈福"
         ]
     },
     "家族返回": {
@@ -124,11 +122,6 @@
             "家族祈福回到了主页面"
         ]
     },
-    "没有红点": {
-        "next": [
-            "家族返回"
-        ]
-    },
     "祈福确定": {
         "recognition": {
             "type": "OCR",
@@ -147,32 +140,9 @@
         "action": {
             "type": "Click"
         },
+        "post_delay": 400,
         "next": [
             "转盘返回"
-        ]
-    },
-    "转盘红点": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": "家族祈福转盘",
-                "roi_offset": [
-                    6,
-                    -64,
-                    58,
-                    55
-                ],
-                "template": [
-                    "红点.png",
-                    "红点1.png"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "next": [
-            "今日免费祈福"
         ]
     },
     "转盘返回": {
