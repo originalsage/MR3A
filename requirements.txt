@@ -1,4 +1,4 @@
-maafw==v5.12.2
+maafw==5.14.2
 loguru
 pillow
 pytz
