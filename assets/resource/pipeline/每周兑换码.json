@@ -27,7 +27,7 @@
                     114
                 ],
                 "expected": [
-                    "兑换码不能为空|无效的礼包码|已达到兑换次数上限|礼包码已过期"
+                    "兑换码不能为空|无效的礼包码|已达到兑换次数上限|礼包码已过期|未满足领取条件"
                 ]
             }
         },
@@ -173,6 +173,22 @@
             "[JumpBack]每周兑换码入口",
             "每周兑换码任务出错",
             "每周兑换码完成"
+        ]
+    },
+    "每周兑换码下载GameMeta": {
+        "pre_delay": 0,
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "DownloadGameMeta"
+            }
+        },
+        "post_delay": 0,
+        "next": [
+            "获取兑换码"
+        ],
+        "on_error": [
+            "获取兑换码失败"
         ]
     },
     "每周兑换码任务出错": {
@@ -355,22 +371,6 @@
         "next": [
             "每周兑换码检查主页面",
             "[JumpBack]back"
-        ]
-    },
-    "每周兑换码下载GameMeta": {
-        "pre_delay": 0,
-        "action": {
-            "type": "Custom",
-            "param": {
-                "custom_action": "DownloadGameMeta"
-            }
-        },
-        "post_delay": 0,
-        "next": [
-            "获取兑换码"
-        ],
-        "on_error": [
-            "获取兑换码失败"
         ]
     }
 }
