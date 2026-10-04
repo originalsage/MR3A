@@ -1,9 +1,9 @@
 name: Sync weekly codes
 
 on:
-  # schedule:
-  #   - cron: '49 */5 * * *'      # 北京时间每 5 小时 49 分
-  #     timezone: 'Asia/Shanghai'
+  schedule:
+    - cron: '49 */5 * * *'      # 北京时间每 5 小时 49 分
+      timezone: 'Asia/Shanghai'
   workflow_dispatch:
 
 permissions:
