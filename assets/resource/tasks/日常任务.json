@@ -1356,6 +1356,20 @@
                     "pipeline_override": {
                         "关闭游戏直接关闭游戏": {
                             "enabled": false
+                        },
+                        "取消屏蔽组队邀请后不关闭游戏": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "取消屏蔽邀请后不关闭游戏",
+                    "pipeline_override": {
+                        "关闭游戏直接关闭游戏": {
+                            "enabled": false
+                        },
+                        "取消屏蔽组队邀请后不关闭游戏": {
+                            "enabled": true
                         }
                     }
                 },
@@ -1364,6 +1378,9 @@
                     "pipeline_override": {
                         "关闭游戏直接关闭游戏": {
                             "enabled": true
+                        },
+                        "取消屏蔽组队邀请后不关闭游戏": {
+                            "enabled": false
                         }
                     }
                 }
