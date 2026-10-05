@@ -1,4 +1,81 @@
 {
+    "关闭应用宝服": {
+        "pre_delay": 0,
+        "action": {
+            "type": "StopApp",
+            "param": {
+                "package": "com.tencent.tmgp.pandadastudio.ninja3"
+            }
+        },
+        "post_delay": 0,
+        "next": [
+            "关闭应用宝服成功"
+        ]
+    },
+    "关闭应用宝服成功": {
+        "pre_delay": 0,
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "DisableNode",
+                "custom_action_param": {
+                    "node_name": "关闭应用宝服"
+                }
+            }
+        },
+        "post_delay": 0
+    },
+    "使能关闭应用宝服": {
+        "pre_delay": 0,
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "EnableNode",
+                "custom_action_param": {
+                    "node_name": "关闭应用宝服"
+                }
+            }
+        },
+        "post_delay": 0,
+        "next": [
+            "使能关闭vivo服"
+        ]
+    },
+    "关闭游戏设置页面上滑计数": {
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "Count",
+                "custom_recognition_param": {
+                    "target": 4
+                }
+            }
+        },
+        "next": [
+            "开始取消屏蔽组队邀请"
+        ]
+    },
+    "重置节点关闭游戏设置页面上滑计数": {
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "ResetCount",
+                "custom_action_param": {
+                    "node_name": "关闭游戏设置页面上滑计数"
+                }
+            }
+        },
+        "focus": "⚠️屏蔽组队邀请失败，跳过屏蔽组队邀请，继续后续任务"
+    },
+    "开始取消屏蔽组队邀请": {
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "关闭游戏屏蔽所有组队邀请",
+            "关闭游戏设置页面上滑",
+            "[JumpBack]关闭游戏打开设置"
+        ]
+    },
     "使能关闭4399服": {
         "pre_delay": 0,
         "action": {
@@ -348,6 +425,8 @@
         ]
     },
     "关闭游戏处理取消屏蔽邀请": {
+        "pre_delay": 0,
+        "post_delay": 0,
         "next": [
             "关闭游戏检查主页面",
             "[JumpBack]back"
@@ -364,7 +443,7 @@
                     625,
                     139,
                     311,
-                    67
+                    337
                 ],
                 "expected": [
                     "屏蔽所有组队邀请"
@@ -417,13 +496,13 @@
             }
         },
         "next": [
-            "关闭游戏屏蔽所有组队邀请",
-            "[JumpBack]关闭游戏设置页面上滑",
-            "[JumpBack]关闭游戏打开设置"
+            "开始取消屏蔽组队邀请"
         ]
     },
     "关闭游戏直接关闭游戏": {
         "enabled": false,
+        "pre_delay": 0,
+        "post_delay": 0,
         "next": [
             "开始关闭游戏"
         ]
@@ -447,21 +526,28 @@
             "type": "Swipe",
             "param": {
                 "begin": [
-                    1000,
-                    450,
-                    1,
-                    1
+                    1100,
+                    430,
+                    30,
+                    30
                 ],
                 "end": [
                     [
-                        1000,
-                        150,
-                        1,
-                        1
+                        1100,
+                        230,
+                        30,
+                        30
                     ]
+                ],
+                "end_hold": [
+                    1000
                 ]
             }
-        }
+        },
+        "next": [
+            "关闭游戏设置页面上滑计数",
+            "重置节点关闭游戏设置页面上滑计数"
+        ]
     },
     "关闭游戏返回主页面": {
         "recognition": {
@@ -528,48 +614,6 @@
             "type": "Click"
         },
         "post_wait_freezes": 500
-    },
-    "关闭应用宝服": {
-        "pre_delay": 0,
-        "action": {
-            "type": "StopApp",
-            "param": {
-                "package": "com.tencent.tmgp.pandadastudio.ninja3"
-            }
-        },
-        "post_delay": 0,
-        "next": [
-            "关闭应用宝服成功"
-        ]
-    },
-    "关闭应用宝服成功": {
-        "pre_delay": 0,
-        "action": {
-            "type": "Custom",
-            "param": {
-                "custom_action": "DisableNode",
-                "custom_action_param": {
-                    "node_name": "关闭应用宝服"
-                }
-            }
-        },
-        "post_delay": 0
-    },
-    "使能关闭应用宝服": {
-        "pre_delay": 0,
-        "action": {
-            "type": "Custom",
-            "param": {
-                "custom_action": "EnableNode",
-                "custom_action_param": {
-                    "node_name": "关闭应用宝服"
-                }
-            }
-        },
-        "post_delay": 0,
-        "next": [
-            "使能关闭vivo服"
-        ]
     },
     "取消屏蔽组队邀请后不关闭游戏": {
         "enabled": false
