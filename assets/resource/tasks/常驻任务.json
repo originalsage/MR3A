@@ -178,7 +178,7 @@
         },
         "清S": {
             "type": "switch",
-            "label": "清S",
+            "label": "清S次数",
             "default_case": "Yes",
             "cases": [
                 {
@@ -203,7 +203,7 @@
         },
         "清SS+": {
             "type": "switch",
-            "label": "清SS+",
+            "label": "清SS+次数",
             "default_case": "Yes",
             "cases": [
                 {
