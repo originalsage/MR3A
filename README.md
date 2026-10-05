@@ -107,6 +107,6 @@ Powered by [MaaFramework](https://github.com/MaaXYZ/MaaFramework) & [MFAAvalonia
 
 MR3A 用户 QQ 群：1090310179
 
-本项目采用 [MIT](LICENSE) 许可证
+本项目采用 [AGPL-3.0](LICENSE) 许可证
 
 </div>
