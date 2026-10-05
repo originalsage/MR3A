@@ -5,7 +5,7 @@
         "timeout": 480000,
         "rate_limit": 100,
         "next": [
-            "[JumpBack]处理叉叉弹窗",
+            "处理叉叉弹窗",
             "点击左上角退出",
             "点击一些返回按钮",
             "[JumpBack]关闭地区聊天",
@@ -144,7 +144,11 @@
         "post_wait_freezes": {
             "time": 400,
             "threshold": 0.8
-        }
+        },
+        "next": [
+            "点击一些返回按钮",
+            "back"
+        ]
     },
     "点击一些返回按钮": {
         "recognition": {
