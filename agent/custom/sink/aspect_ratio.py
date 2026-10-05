@@ -4,44 +4,58 @@
 在任务开始时检查模拟器分辨率是否为 16:9，如果不是则停止任务并输出警告。
 """
 
-from maa.agent.agent_server import AgentServer
-from maa.tasker import Tasker, TaskerEventSink
-from maa.event_sink import NotificationType
+import time
+from typing import Any
 
+from maa.agent.agent_server import AgentServer
+from maa.event_sink import NotificationType
+from maa.tasker import Tasker, TaskerEventSink
+from utils.aspect_ratio import calculate_aspect_ratio, is_aspect_ratio_16x9
 from utils.logger import logger
 
-# 目标宽高比：16:9
-TARGET_RATIO = 16.0 / 9.0
-# 容差范围（±2%）
-TOLERANCE = 0.02
+# maa 的 resolution 只有在本帧已有截图后才有值，缓存为空时读取会得到 (0, 0)。
+# 补截图后最多再重试这么多轮，仍读不到就由调用方跳过本次检查。
+MAX_RESOLUTION_RETRIES = 20
+RESOLUTION_RETRY_INTERVAL_SECONDS = 1.0
 
 
-def is_aspect_ratio_16x9(width: int, height: int) -> bool:
-    """
-    检查给定的尺寸是否大约为 16:9
-    同时处理横屏（16:9）和竖屏（9:16）方向
-    """
-    if width <= 0 or height <= 0:
-        return False
+def read_controller_resolution(controller: Any) -> tuple[int, int]:
+    try:
+        width, height = controller.resolution
+    except Exception as exc:
+        logger.warning(f"获取控制器分辨率失败: {exc}")
+        return (0, 0)
 
-    ratio = calculate_aspect_ratio(width, height)
-
-    # 检查比例是否在 16:9 的容差范围内
-    return abs(ratio - TARGET_RATIO) <= TARGET_RATIO * TOLERANCE
+    return (int(width), int(height))
 
 
-def calculate_aspect_ratio(width: int, height: int) -> float:
-    """
-    计算宽高比，始终返回 较大/较小 的比值
-    这样可以统一处理横屏和竖屏方向
-    """
-    w = float(width)
-    h = float(height)
+def get_controller_resolution(controller: Any, ensure_screencap: bool = True) -> tuple[int, int]:
+    if controller is None:
+        return (0, 0)
 
-    # 始终返回较大值/较小值，以统一方向
-    if w > h:
-        return w / h
-    return h / w
+    width, height = read_controller_resolution(controller)
+    if not ensure_screencap:
+        return (width, height)
+
+    for _ in range(MAX_RESOLUTION_RETRIES):
+        if width > 0 and height > 0:
+            return (width, height)
+
+        try:
+            controller.post_screencap().wait().get()
+        except Exception as exc:
+            logger.warning(f"初始化分辨率失败: {exc}")
+            return (0, 0)
+
+        width, height = read_controller_resolution(controller)
+        if width <= 0 or height <= 0:
+            time.sleep(RESOLUTION_RETRY_INTERVAL_SECONDS)
+
+    return (width, height)
+
+
+def format_resolution(width: int, height: int) -> str:
+    return f"{width}x{height}"
 
 
 @AgentServer.tasker_sink()
@@ -50,9 +64,6 @@ class AspectRatioChecker(TaskerEventSink):
     分辨率检查器
     在任务开始时检查设备分辨率是否为 16:9
     """
-
-    def __init__(self):
-        self._checked = False
 
     def on_tasker_task(
         self,
@@ -69,46 +80,29 @@ class AspectRatioChecker(TaskerEventSink):
             logger.debug("收到 PostStop 事件，跳过分辨率检查")
             return
 
-        # 每次任务开始时都检查（不再使用 _checked 标志）
-        logger.debug(
-            f"任务开始前检查分辨率 - task_id: {detail.task_id}, entry: {detail.entry}"
-        )
+        logger.debug(f"任务开始前检查分辨率 - task_id: {detail.task_id}, entry: {detail.entry}")
 
         # 获取控制器
         controller = tasker.controller
-        if controller is None:
-            logger.error("无法获取控制器")
+
+        width, height = get_controller_resolution(controller, ensure_screencap=True)
+        if width <= 0 or height <= 0:
+            # 读不到分辨率不等于分辨率不合规，跳过本次检查而不是停掉整条任务链
+            logger.warning("无法获取控制器实际未缩放分辨率，跳过本次分辨率检查")
             return
 
-        # 获取缓存的图像
-        try:
-            img = controller.cached_image
-            if img is None:
-                # 如果没有缓存图像，尝试截图
-                img = controller.post_screencap().wait().get()
-        except Exception as e:
-            logger.error(f"无法获取截图: {e}")
-            return
-
-        if img is None:
-            logger.error("无法获取截图")
-            return
-
-        # 获取图像尺寸
-        height, width = img.shape[:2]
-
-        logger.debug(f"截图尺寸: {width} x {height}")
+        logger.debug(f"实际未缩放分辨率: {format_resolution(width, height)}")
 
         # 检查宽高比
         if not is_aspect_ratio_16x9(width, height):
             actual_ratio = calculate_aspect_ratio(width, height)
             logger.error(
                 f"🚨 分辨率比例不匹配！任务已停止。"
-                f"当前: {width}x{height} (比例: {actual_ratio:.4f})，"
-                f"MR3A 仅支持 16:9 比例，请调整为: 2560x1440, 1920x1080, 1600x900, 1280x720 (推荐)"
+                f"当前: {format_resolution(width, height)} (比例: {actual_ratio:.4f})，"
+                f"MR3A 仅支持 16:9 比例，请调整为: 2560x1440, 1920x1080, 1600x900, 1280x720(推荐)"
             )
 
             # 停止任务
             tasker.post_stop()
         else:
-            logger.debug(f"分辨率检查通过: {width}x{height} (16:9)")
+            logger.debug(f"分辨率检查通过: {format_resolution(width, height)} (16:9)")
