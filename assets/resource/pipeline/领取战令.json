@@ -583,7 +583,8 @@
     "领取战令entry": {
         "next": [
             "[JumpBack]领取战令入口",
-            "领取战令任务出错"
+            "领取战令任务出错",
+            "领取战令任务完成"
         ]
     },
     "领取战令任务出错": {
@@ -594,27 +595,6 @@
         "next": [
             "重置领取战令内部节点计数器"
         ]
-    },
-    "领取战令完成回到了主页面": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    4,
-                    136,
-                    434,
-                    459
-                ],
-                "template": [
-                    "主页面.png"
-                ],
-                "green_mask": true
-            }
-        },
-        "action": {
-            "type": "StopTask"
-        },
-        "focus": "任务完成：领取战令✅"
     },
     "领取战令完成准备返回主页": {
         "pre_delay": 0,
@@ -643,5 +623,50 @@
         "next": [
             "识别并点击战令"
         ]
+    },
+    "领取战令完成": {
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "DisableNode",
+                "custom_action_param": {
+                    "node_name": "领取战令入口"
+                }
+            }
+        },
+        "focus": "任务完成：领取战令✅"
+    },
+    "领取战令完成回到了主页面": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    4,
+                    136,
+                    434,
+                    459
+                ],
+                "template": [
+                    "主页面.png"
+                ],
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "DisableNode",
+                "custom_action_param": {
+                    "node_name": "领取战令任务出错"
+                }
+            }
+        },
+        "next": [
+            "领取战令完成"
+        ]
+    },
+    "领取战令任务完成": {
+        "pre_delay": 0,
+        "post_delay": 0
     }
 }
