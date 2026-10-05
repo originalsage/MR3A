@@ -1,23 +1,4 @@
 {
-    "没有今日免费祈福": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    124,
-                    558,
-                    354,
-                    139
-                ],
-                "expected": [
-                    "祈福"
-                ]
-            }
-        },
-        "next": [
-            "转盘返回"
-        ]
-    },
     "今日免费祈福": {
         "recognition": {
             "type": "OCR",
@@ -43,7 +24,8 @@
     "家族祈福entry": {
         "next": [
             "[JumpBack]家族祈福入口",
-            "家族祈福任务出错"
+            "家族祈福任务出错",
+            "家族祈福任务完成"
         ]
     },
     "家族祈福任务出错": {
@@ -54,27 +36,6 @@
         "next": [
             "重置家族祈福内部节点计数器"
         ]
-    },
-    "家族祈福回到了主页面": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    4,
-                    136,
-                    434,
-                    459
-                ],
-                "template": [
-                    "主页面.png"
-                ],
-                "green_mask": true
-            }
-        },
-        "action": {
-            "type": "StopTask"
-        },
-        "focus": "任务完成：家族祈福✅"
     },
     "家族祈福转盘": {
         "recognition": {
@@ -120,6 +81,25 @@
         },
         "next": [
             "家族祈福回到了主页面"
+        ]
+    },
+    "没有今日免费祈福": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    124,
+                    558,
+                    354,
+                    139
+                ],
+                "expected": [
+                    "祈福"
+                ]
+            }
+        },
+        "next": [
+            "转盘返回"
         ]
     },
     "祈福确定": {
@@ -211,5 +191,50 @@
             "进入家族",
             "[JumpBack]back"
         ]
+    },
+    "家族祈福任务完成": {
+        "pre_delay": 0,
+        "post_delay": 0
+    },
+    "家族祈福回到了主页面": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    4,
+                    136,
+                    434,
+                    459
+                ],
+                "template": [
+                    "主页面.png"
+                ],
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "DisableNode",
+                "custom_action_param": {
+                    "node_name": "家族祈福任务出错"
+                }
+            }
+        },
+        "next": [
+            "家族祈福完成"
+        ]
+    },
+    "家族祈福完成": {
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "DisableNode",
+                "custom_action_param": {
+                    "node_name": "家族祈福入口"
+                }
+            }
+        },
+        "focus": "任务完成：家族祈福✅"
     }
 }
