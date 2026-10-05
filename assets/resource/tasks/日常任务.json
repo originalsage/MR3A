@@ -240,6 +240,18 @@
                             }
                         }
                     }
+                },
+                {
+                    "name": "应用宝",
+                    "pipeline_override": {
+                        "启动应用": {
+                            "action": {
+                                "param": {
+                                    "package": "com.tencent.tmgp.pandadastudio.ninja3"
+                                }
+                            }
+                        }
+                    }
                 }
             ]
         },
