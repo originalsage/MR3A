@@ -107,6 +107,7 @@
                     "recognition": {
                         "param": {
                             "custom_recognition_param": {
+                                "hour": 20,
                                 "minute": "{选卡分钟}"
                             }
                         }
