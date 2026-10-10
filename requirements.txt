@@ -1,4 +1,4 @@
-maafw==5.14.2
+maafw==5.14.0
 loguru
 pillow
 pytz
