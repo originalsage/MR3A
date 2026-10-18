@@ -20,6 +20,7 @@ on:
   workflow_dispatch:
 env:
   MAA_FRAMEWORK_VERSION: "v5.12.2"
+  MFA_VERSION: "v2.15.2"
 permissions:
   contents: write
   actions: write
@@ -112,7 +113,7 @@ jobs:
         with:
           repository: MaaXYZ/MFAAvalonia
           fileName: "MFAAvalonia-*-win-${{ steps.platform.outputs.tag }}*"
-          latest: true
+          tag: ${{ env.MFA_VERSION }}
           out-file-path: "MFA"
           extract: true
 
@@ -237,7 +238,7 @@ jobs:
         with:
           repository: MaaXYZ/MFAAvalonia
           fileName: "MFAAvalonia-*-linux-${{ steps.platform.outputs.tag }}*"
-          latest: true
+          tag: ${{ env.MFA_VERSION }}
           out-file-path: "MFA"
           extract: true
 
@@ -354,7 +355,7 @@ jobs:
         with:
           repository: MaaXYZ/MFAAvalonia
           fileName: "MFAAvalonia-*-osx-${{ steps.platform.outputs.tag }}*"
-          latest: true
+          tag: ${{ env.MFA_VERSION }}
           out-file-path: "MFA"
           extract: true
 
