@@ -1,0 +1,821 @@
+{
+    "起号06entry": {
+        "next": [
+            "起号06点击出发",
+            "[JumpBack]起号06搜寻鬼族"
+        ]
+    },
+    "起号06搜寻鬼族": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    4,
+                    190,
+                    116,
+                    395
+                ],
+                "expected": [
+                    "搜寻鬼族"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 2000
+    },
+    "起号06点击出发": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    825,
+                    526,
+                    419,
+                    184
+                ],
+                "expected": [
+                    "出发"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "起号06点击出发",
+            "起号06没有出发按钮了"
+        ]
+    },
+    "起号06发现下滑按钮": {
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": [
+                    230,
+                    612,
+                    1,
+                    1
+                ],
+                "lower": [
+                    [
+                        255,
+                        255,
+                        255
+                    ]
+                ],
+                "upper": [
+                    [
+                        255,
+                        255,
+                        255
+                    ]
+                ]
+            }
+        },
+        "pre_delay": 0,
+        "post_delay": 9000,
+        "timeout": 60000,
+        "rate_limit": 30,
+        "next": [
+            "起号06发现下翻按钮"
+        ]
+    },
+    "起号06没有出发按钮了": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    0,
+                    0
+                ]
+            }
+        },
+        "timeout": 60000,
+        "next": [
+            "起号06发现下滑按钮"
+        ]
+    },
+    "起号06发现下翻按钮": {
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": [
+                    189,
+                    606,
+                    1,
+                    1
+                ],
+                "lower": [
+                    [
+                        255,
+                        255,
+                        255
+                    ]
+                ],
+                "upper": [
+                    [
+                        255,
+                        255,
+                        255
+                    ]
+                ]
+            }
+        },
+        "pre_delay": 0,
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "qh_level_2_1"
+            }
+        },
+        "post_delay": 0,
+        "timeout": 40000,
+        "rate_limit": 2000,
+        "next": [
+            "起号06新忍阶",
+            "[JumpBack]起号06首次通关奖励",
+            "[JumpBack]起号06通关确定"
+        ]
+    },
+    "起号06首次通关奖励": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    461,
+                    40,
+                    351,
+                    160
+                ],
+                "expected": [
+                    "首次通关奖励"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "起号06通关确定": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    392,
+                    541,
+                    503,
+                    174
+                ],
+                "expected": [
+                    "确定"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "起号06新忍阶": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    85,
+                    148,
+                    273,
+                    98
+                ],
+                "expected": [
+                    "你获得了新忍阶"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    59,
+                    49,
+                    33,
+                    33
+                ]
+            }
+        },
+        "next": [
+            "起号06新功能",
+            "[JumpBack]起号06点击忍阶"
+        ]
+    },
+    "起号06点击忍阶": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    53,
+                    44,
+                    30,
+                    36
+                ]
+            }
+        }
+    },
+    "起号06新功能": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    249,
+                    471,
+                    349,
+                    160
+                ],
+                "expected": [
+                    "新功能"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    259,
+                    631,
+                    40,
+                    27
+                ]
+            }
+        },
+        "next": [
+            "起号06召唤确定",
+            "起号06新功能",
+            "[JumpBack]起号06召唤一次",
+            "[JumpBack]起号06点召唤中间"
+        ]
+    },
+    "起号06召唤一次": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    947,
+                    552,
+                    333,
+                    165
+                ],
+                "expected": [
+                    "召唤一次",
+                    "限时免费一次"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "起号06点召唤中间": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    627,
+                    304,
+                    35,
+                    32
+                ]
+            }
+        }
+    },
+    "起号06召唤确定": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    381,
+                    583,
+                    623,
+                    136
+                ],
+                "expected": [
+                    "确定"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "起号06召唤确定",
+            "[JumpBack]起号06退出召唤",
+            "[JumpBack]起号06新的作战忍者",
+            "[JumpBack]起号06点击继续",
+            "起号06进入小队"
+        ]
+    },
+    "起号06退出召唤": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    5,
+                    5,
+                    243,
+                    200
+                ],
+                "template": [
+                    "返回按钮.png",
+                    "家族返回按钮.png",
+                    "退出召唤按钮.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 2000
+    },
+    "起号06新的作战忍者": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    193,
+                    239,
+                    918,
+                    181
+                ],
+                "expected": [
+                    "作战忍者",
+                    "小队功能"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    148,
+                    630,
+                    35,
+                    40
+                ]
+            }
+        }
+    },
+    "起号06点击继续": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    471,
+                    504,
+                    308,
+                    117
+                ],
+                "expected": [
+                    "继续"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    140,
+                    626,
+                    44,
+                    46
+                ]
+            }
+        }
+    },
+    "起号06进入小队": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    16,
+                    630,
+                    121,
+                    86
+                ],
+                "expected": [
+                    "忍者"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    148,
+                    630,
+                    35,
+                    40
+                ]
+            }
+        },
+        "next": [
+            "[JumpBack]起号06编入小队",
+            "起号06点击队伍二号位",
+            "[JumpBack]起号06点击继续",
+            "[JumpBack]起号06新的作战忍者",
+            "起号06进入小队"
+        ]
+    },
+    "起号06编入小队": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    459,
+                    484,
+                    768,
+                    162
+                ],
+                "expected": [
+                    "不同的忍者"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    704,
+                    652,
+                    94,
+                    44
+                ]
+            }
+        }
+    },
+    "起号06点击队伍二号位": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    881,
+                    555,
+                    400,
+                    159
+                ],
+                "expected": [
+                    "一键上阵"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    605,
+                    262,
+                    48,
+                    49
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号06点击琳"
+        ]
+    },
+    "起号06点击琳": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    747,
+                    190,
+                    36,
+                    56
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号06点击更换"
+        ]
+    },
+    "起号06点击更换": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1076,
+                    531,
+                    131,
+                    118
+                ],
+                "expected": [
+                    "更换"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号06点开了忍阶",
+            "[JumpBack]起号06退出召唤",
+            "[JumpBack]起号06点击继续",
+            "[JumpBack]起号06商店开启",
+            "[JumpBack]起号06点击忍阶2"
+        ]
+    },
+    "起号06商店开启": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    248,
+                    244,
+                    766,
+                    181
+                ],
+                "expected": [
+                    "商店开启"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "起号06点击忍阶2": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    46,
+                    50,
+                    51,
+                    41
+                ]
+            }
+        },
+        "post_delay": 2000
+    },
+    "起号06点开了忍阶": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    2,
+                    630,
+                    1263,
+                    89
+                ],
+                "expected": [
+                    "当前忍阶",
+                    "下一忍阶"
+                ]
+            }
+        },
+        "next": [
+            "[JumpBack]起号06点击领取",
+            "[JumpBack]起号06点击继续2",
+            "起号06领取完忍阶回到下一忍阶页面"
+        ]
+    },
+    "起号06点击领取": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1009,
+                    252,
+                    253,
+                    147
+                ],
+                "expected": [
+                    "点击领取"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "起号06点击继续2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    408,
+                    560,
+                    527,
+                    155
+                ],
+                "expected": [
+                    "继续"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1023,
+                    474,
+                    133,
+                    100
+                ]
+            }
+        }
+    },
+    "起号06领取完忍阶回到下一忍阶页面": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1011,
+                    607,
+                    266,
+                    112
+                ],
+                "expected": [
+                    "下一忍阶"
+                ]
+            }
+        },
+        "next": [
+            "起号06关闭新手福利",
+            "[JumpBack]起号06退出召唤",
+            "[JumpBack]起号06新人成长计划",
+            "[JumpBack]起号06主页面点击新手福利"
+        ]
+    },
+    "起号06新人成长计划": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    224,
+                    224,
+                    806,
+                    206
+                ],
+                "expected": [
+                    "成长计划"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "起号06主页面点击新手福利": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    5,
+                    157,
+                    225,
+                    438
+                ],
+                "expected": [
+                    "新手"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 2000
+    },
+    "起号06关闭新手福利": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    100,
+                    168,
+                    214,
+                    239
+                ],
+                "expected": [
+                    "新忍签到"
+                ]
+            }
+        },
+        "next": [
+            "[JumpBack]起号06处理叉叉弹窗",
+            "起号06强化完回到主页面点击故事"
+        ]
+    },
+    "起号06处理叉叉弹窗": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    833,
+                    5,
+                    440,
+                    441
+                ],
+                "template": [
+                    "叉叉0.png",
+                    "叉叉1.png",
+                    "叉叉2.png",
+                    "叉叉3.png",
+                    "叉叉4.png"
+                ],
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": {
+            "time": 400,
+            "threshold": 0.8
+        },
+        "post_delay": 1000
+    },
+    "起号06强化完回到主页面点击故事": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    500,
+                    712
+                ],
+                "template": [
+                    "主页面.png"
+                ],
+                "green_mask": true
+            }
+        },
+        "pre_delay": 1000,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    857,
+                    276,
+                    95,
+                    46
+                ]
+            }
+        },
+        "next": [
+            "起号06结束",
+            "[JumpBack]起号06点击第二章"
+        ]
+    },
+    "起号06点击第二章": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    997,
+                    51,
+                    283,
+                    299
+                ],
+                "expected": [
+                    "忍者之书",
+                    "好友排行",
+                    "训练所"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    398,
+                    505,
+                    71,
+                    86
+                ]
+            }
+        },
+        "post_delay": 2000
+    },
+    "起号06结束": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    876,
+                    2,
+                    262,
+                    125
+                ],
+                "expected": [
+                    "第三关"
+                ]
+            }
+        }
+    }
+}

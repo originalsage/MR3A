@@ -40,6 +40,10 @@
         {
             "name": "限时活动",
             "label": "限时活动"
+        },
+        {
+            "name": "新号起号",
+            "label": "新号起号"
         }
     ],
     "task": [],
@@ -47,9 +51,11 @@
         "resource/tasks/preset/日常任务.json",
         "resource/tasks/preset/常驻任务.json",
         "resource/tasks/preset/限时活动.json",
+        "resource/tasks/preset/新号起号.json",
         "resource/tasks/日常任务.json",
         "resource/tasks/常驻任务.json",
-        "resource/tasks/限时活动.json"
+        "resource/tasks/限时活动.json",
+        "resource/tasks/新号起号.json"
     ],
     "option": {}
 }

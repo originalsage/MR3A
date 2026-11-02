@@ -1,0 +1,221 @@
+{
+    "起号13entry": {
+        "next": [
+            "起号13点击出发",
+            "[JumpBack]起号13点击寻找伙伴",
+            "[JumpBack] 起号13左滑"
+        ]
+    },
+    "起号13点击寻找伙伴": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    905,
+                    139,
+                    361,
+                    432
+                ],
+                "expected": [
+                    "寻找伙伴"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 2000
+    },
+    "起号13点击出发": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    868,
+                    543,
+                    333,
+                    159
+                ],
+                "expected": [
+                    "出发"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 2000,
+        "next": [
+            "起号13点击出发",
+            "起号13进入关卡"
+        ]
+    },
+    "起号13进入关卡": {
+        "timeout": 90000,
+        "rate_limit": 30,
+        "next": [
+            "起号13发现下滑按钮"
+        ]
+    },
+    "起号13发现下滑按钮": {
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": [
+                    230,
+                    612,
+                    1,
+                    1
+                ],
+                "lower": [
+                    [
+                        255,
+                        255,
+                        255
+                    ]
+                ],
+                "upper": [
+                    [
+                        255,
+                        255,
+                        255
+                    ]
+                ]
+            }
+        },
+        "pre_delay": 0,
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "qh_level_2_8",
+                "target": [
+                    230,
+                    612,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_delay": 0,
+        "timeout": 40000,
+        "next": [
+            "起号13死亡再来一次",
+            "起号13结束",
+            "[JumpBack]起号13通关确定",
+            "[JumpBack]起号13首次通关奖励"
+        ]
+    },
+    "起号13首次通关奖励": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    461,
+                    40,
+                    351,
+                    160
+                ],
+                "expected": [
+                    "首次通关奖励"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "起号13通关确定": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    392,
+                    541,
+                    503,
+                    174
+                ],
+                "expected": [
+                    "确定"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "起号13结束": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    894,
+                    8,
+                    235,
+                    126
+                ],
+                "expected": [
+                    "第九关"
+                ]
+            }
+        }
+    },
+    "起号13死亡再来一次": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    643,
+                    512,
+                    339,
+                    168
+                ],
+                "expected": [
+                    "再来一次"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "起号13死亡再来一次",
+            "起号13进入关卡"
+        ]
+    },
+    " 起号13左滑": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    888,
+                    7,
+                    255,
+                    109
+                ],
+                "expected": [
+                    "第九关"
+                ]
+            }
+        },
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    1153,
+                    348,
+                    75,
+                    108
+                ],
+                "end": [
+                    [
+                        452,
+                        352,
+                        73,
+                        109
+                    ]
+                ]
+            }
+        },
+        "post_delay": 3000
+    }
+}

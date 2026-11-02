@@ -1,0 +1,160 @@
+{
+    "起号07entry": {
+        "next": [
+            "起号07点击出发",
+            "[JumpBack]起号07点击黑暗骨林"
+        ]
+    },
+    "起号07点击黑暗骨林": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    155,
+                    139,
+                    181,
+                    432
+                ],
+                "expected": [
+                    "黑暗",
+                    "骨林"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 4000
+    },
+    "起号07点击出发": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    868,
+                    543,
+                    333,
+                    159
+                ],
+                "expected": [
+                    "出发"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 2000,
+        "next": [
+            "起号07点击出发",
+            "起号07进入关卡"
+        ]
+    },
+    "起号07发现下滑按钮": {
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": [
+                    230,
+                    612,
+                    1,
+                    1
+                ],
+                "lower": [
+                    [
+                        255,
+                        255,
+                        255
+                    ]
+                ],
+                "upper": [
+                    [
+                        255,
+                        255,
+                        255
+                    ]
+                ]
+            }
+        },
+        "pre_delay": 0,
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "qh_level_2_2",
+                "target": [
+                    230,
+                    612,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_delay": 0,
+        "next": [
+            "起号07结束",
+            "[JumpBack]起号07首次通关奖励",
+            "[JumpBack]起号07通关确定"
+        ]
+    },
+    "起号07进入关卡": {
+        "timeout": 90000,
+        "rate_limit": 30,
+        "next": [
+            "起号07发现下滑按钮"
+        ]
+    },
+    "起号07首次通关奖励": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    461,
+                    40,
+                    351,
+                    160
+                ],
+                "expected": [
+                    "首次通关奖励"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "起号07通关确定": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    392,
+                    541,
+                    503,
+                    174
+                ],
+                "expected": [
+                    "确定"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "起号07结束": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    894,
+                    8,
+                    235,
+                    126
+                ],
+                "expected": [
+                    "第三关"
+                ]
+            }
+        }
+    }
+}

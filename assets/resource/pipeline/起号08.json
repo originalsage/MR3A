@@ -1,0 +1,290 @@
+{
+    "起号08entry": {
+        "next": [
+            "起号08点击出发",
+            "[JumpBack]起号08点击赤面酒鬼"
+        ]
+    },
+    "起号08点击赤面酒鬼": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    335,
+                    139,
+                    181,
+                    432
+                ],
+                "expected": [
+                    "赤面酒鬼"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 2000
+    },
+    "起号08点击出发": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    868,
+                    543,
+                    333,
+                    159
+                ],
+                "expected": [
+                    "出发"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 2000,
+        "next": [
+            "起号08点击出发",
+            "起号08进入关卡"
+        ]
+    },
+    "起号08发现下滑按钮": {
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": [
+                    230,
+                    612,
+                    1,
+                    1
+                ],
+                "lower": [
+                    [
+                        255,
+                        255,
+                        255
+                    ]
+                ],
+                "upper": [
+                    [
+                        255,
+                        255,
+                        255
+                    ]
+                ]
+            }
+        },
+        "pre_delay": 0,
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "qh_level_2_3",
+                "target": [
+                    230,
+                    612,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_delay": 0,
+        "timeout": 60000,
+        "next": [
+            "[JumpBack]起号08boss存活",
+            "起号08死亡再来一次",
+            "起号08结束",
+            "[JumpBack]起号08通关确定",
+            "[JumpBack]起号08首次通关奖励"
+        ]
+    },
+    "起号08进入关卡": {
+        "timeout": 90000,
+        "rate_limit": 30,
+        "next": [
+            "起号08发现下滑按钮"
+        ]
+    },
+    "起号08首次通关奖励": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    461,
+                    40,
+                    351,
+                    160
+                ],
+                "expected": [
+                    "首次通关奖励"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "起号08通关确定": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    392,
+                    541,
+                    503,
+                    174
+                ],
+                "expected": [
+                    "确定"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "起号08结束": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    894,
+                    8,
+                    235,
+                    126
+                ],
+                "expected": [
+                    "第五关"
+                ]
+            }
+        }
+    },
+    "起号08二段跳": {
+        "pre_delay": 0,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1068,
+                    596,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_delay": 100,
+        "next": [
+            "起号08大招"
+        ]
+    },
+    "起号08武器": {
+        "pre_delay": 0,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    381,
+                    621,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_delay": 50,
+        "next": [
+            "起号08二段跳2"
+        ]
+    },
+    "起号08大招": {
+        "pre_delay": 0,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    76,
+                    347,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_delay": 50,
+        "next": [
+            "起号08武器"
+        ]
+    },
+    "起号08boss存活": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    780,
+                    43,
+                    112,
+                    55
+                ],
+                "expected": [
+                    "×\\d",
+                    "x\\d",
+                    "X\\d"
+                ]
+            }
+        },
+        "pre_delay": 0,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1068,
+                    596,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_delay": 150,
+        "next": [
+            "起号08二段跳"
+        ]
+    },
+    "起号08二段跳2": {
+        "pre_delay": 0,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1068,
+                    596,
+                    1,
+                    1
+                ]
+            }
+        },
+        "repeat": 12,
+        "repeat_delay": 200,
+        "post_delay": 0
+    },
+    "起号08死亡再来一次": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    643,
+                    512,
+                    339,
+                    168
+                ],
+                "expected": [
+                    "再来一次"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "起号08死亡再来一次",
+            "起号08进入关卡"
+        ]
+    }
+}

@@ -1,0 +1,1132 @@
+{
+    "起号02entry": {
+        "next": [
+            "起号02出发",
+            "[JumpBack]起号02考试开始"
+        ]
+    },
+    "起号02下翻": {
+        "pre_delay": 0,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    163,
+                    600,
+                    62,
+                    38
+                ]
+            }
+        },
+        "repeat": 2,
+        "repeat_delay": 100
+    },
+    "起号02你的名字": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    283,
+                    236,
+                    706,
+                    193
+                ],
+                "expected": [
+                    "通过",
+                    "基础考试",
+                    "你的名字"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号02点击输入你的昵称"
+        ]
+    },
+    "起号02关闭黑龙弹窗": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    629,
+                    234,
+                    532,
+                    240
+                ],
+                "expected": [
+                    "黑龙",
+                    "忠实伙伴"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1162,
+                    126,
+                    35,
+                    40
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号02挑战黑龙"
+        ]
+    },
+    "起号02再见经验点兑换页面": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    298,
+                    174,
+                    699,
+                    216
+                ],
+                "expected": [
+                    "^经验点兑换$"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    397,
+                    100,
+                    141,
+                    70
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号02升级完点击返回主页面"
+        ]
+    },
+    "起号02出发": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    863,
+                    563,
+                    380,
+                    127
+                ],
+                "expected": [
+                    "出发"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "起号02确定",
+            "[JumpBack]起号02点击忍术按钮",
+            "[JumpBack]起号02跳跃1"
+        ]
+    },
+    "起号02升级": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    281,
+                    193,
+                    961,
+                    515
+                ],
+                "expected": [
+                    "升级"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 2000
+    },
+    "起号02升级完点击返回主页面": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    696,
+                    318,
+                    250,
+                    185
+                ],
+                "expected": [
+                    "生命值",
+                    "攻击力"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    51,
+                    31,
+                    30,
+                    36
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号02武器新功能点击继续"
+        ]
+    },
+    "起号02响彻忍界": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    291,
+                    232,
+                    819,
+                    206
+                ],
+                "expected": [
+                    "不错的名字",
+                    "响彻整个忍界"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号02忍阶提升"
+        ]
+    },
+    "起号02强化完选择返回": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    288,
+                    269,
+                    684,
+                    137
+                ],
+                "expected": [
+                    "继续强化武器",
+                    "返回"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    386,
+                    80,
+                    182,
+                    65
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号02关闭黑龙弹窗",
+            "[JumpBack]起号02点击返回按钮"
+        ]
+    },
+    "起号02忍阶指引返回主页面": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    107,
+                    7,
+                    358,
+                    121
+                ],
+                "expected": [
+                    "忍者之路"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    38,
+                    38,
+                    41,
+                    36
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号02查看你的忍阶"
+        ]
+    },
+    "起号02忍阶提升": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    55,
+                    118,
+                    322,
+                    162
+                ],
+                "expected": [
+                    "忍阶提升"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    62,
+                    41,
+                    32,
+                    37
+                ]
+            }
+        },
+        "post_delay": 2000,
+        "next": [
+            "起号02忍阶指引返回主页面"
+        ]
+    },
+    "起号02挑战黑龙": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    402,
+                    254,
+                    468,
+                    171
+                ],
+                "expected": [
+                    "挑战黑龙"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号02点击故事"
+        ]
+    },
+    "起号02新功能": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    392,
+                    242,
+                    527,
+                    185
+                ],
+                "expected": [
+                    "有新功能",
+                    "主页面"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 1000
+    },
+    "起号02新功能点击任意位置继续": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    449,
+                    476,
+                    311,
+                    141
+                ],
+                "expected": [
+                    "继续"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号02查看你的忍者",
+            "起号02新功能点击任意位置继续"
+        ]
+    },
+    "起号02新功能返回主页面": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    119,
+                    10,
+                    353,
+                    129
+                ],
+                "expected": [
+                    "忍者之路"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    37,
+                    35,
+                    41,
+                    38
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号02新功能点击任意位置继续",
+            "[JumpBack]起号02新功能",
+            "起号02新功能返回主页面",
+            "起号02查看你的忍者"
+        ]
+    },
+    "起号02查看下一个忍阶": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    777,
+                    515,
+                    476,
+                    204
+                ],
+                "expected": [
+                    "下一个忍阶",
+                    "下一忍阶"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1068,
+                    664,
+                    148,
+                    42
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号02新功能返回主页面",
+            "[JumpBack]起号02新功能",
+            "[JumpBack]起号02点击前往",
+            "起号02查看下一个忍阶"
+        ]
+    },
+    "起号02查看你的忍者": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    74,
+                    468,
+                    287,
+                    138
+                ],
+                "expected": [
+                    "查看你的忍者"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    28,
+                    631,
+                    37,
+                    30
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号02经验点兑换页面",
+            "[JumpBack]起号02升级"
+        ]
+    },
+    "起号02查看你的忍阶": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    77,
+                    141,
+                    284,
+                    118
+                ],
+                "expected": [
+                    "查看你的忍阶"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    37,
+                    46,
+                    49,
+                    47
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号02点击领取忍阶"
+        ]
+    },
+    "起号02查看你的武器": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    187,
+                    500,
+                    216,
+                    109
+                ],
+                "expected": [
+                    "查看你的武器"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    142,
+                    629,
+                    55,
+                    41
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号02点击强化武器提示"
+        ]
+    },
+    "起号02武器": {
+        "pre_delay": 0,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    362,
+                    606,
+                    46,
+                    27
+                ]
+            }
+        },
+        "next": [
+            "起号02下翻"
+        ]
+    },
+    "起号02武器新功能点击继续": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    463,
+                    488,
+                    297,
+                    127
+                ],
+                "expected": [
+                    "继续"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号02查看你的武器",
+            "起号02武器新功能点击继续"
+        ]
+    },
+    "起号02消耗一个强化锤": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    909,
+                    558,
+                    268,
+                    59
+                ],
+                "expected": [
+                    "消耗强化锤"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1079,
+                    663,
+                    114,
+                    39
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号02强化完选择返回"
+        ]
+    },
+    "起号02点击MAX": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    267,
+                    189,
+                    763,
+                    223
+                ],
+                "expected": [
+                    "MAX"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号02点击确定1"
+        ]
+    },
+    "起号02点击任意位置继续": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    517,
+                    621,
+                    254,
+                    84
+                ],
+                "expected": [
+                    "继续"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    998,
+                    431,
+                    155,
+                    107
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号02查看下一个忍阶",
+            "[JumpBack]起号02点击忍生"
+        ]
+    },
+    "起号02点击前往": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1028,
+                    260,
+                    219,
+                    172
+                ],
+                "expected": [
+                    "点击前往"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 1000
+    },
+    "起号02点击强化按钮": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    966,
+                    473,
+                    252,
+                    95
+                ],
+                "expected": [
+                    "点击强化按钮"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1188,
+                    612,
+                    49,
+                    49
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号02点击选择一个强化锤"
+        ]
+    },
+    "起号02点击强化武器提示": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    308,
+                    230,
+                    592,
+                    192
+                ],
+                "expected": [
+                    "强化武器"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    870,
+                    621,
+                    86,
+                    81
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号02点击强化按钮"
+        ]
+    },
+    "起号02点击忍术按钮": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    421,
+                    164,
+                    488,
+                    120
+                ],
+                "expected": [
+                    "点击忍术按钮"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    58,
+                    316,
+                    47,
+                    39
+                ]
+            }
+        }
+    },
+    "起号02点击忍生": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    514,
+                    198,
+                    244,
+                    348
+                ],
+                "expected": [
+                    "忍"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 1000
+    },
+    "起号02点击故事": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    123,
+                    61,
+                    225,
+                    65
+                ],
+                "expected": [
+                    "通关故事"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    881,
+                    276,
+                    87,
+                    43
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号02点击第一章"
+        ]
+    },
+    "起号02点击确定1": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    430,
+                    333,
+                    463,
+                    386
+                ],
+                "expected": [
+                    "确定"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 2000,
+        "next": [
+            "起号02点击确定2"
+        ]
+    },
+    "起号02点击第一章": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    113,
+                    4,
+                    342,
+                    124
+                ],
+                "expected": [
+                    "忍者之路"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    200,
+                    515,
+                    79,
+                    71
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号02结束"
+        ]
+    },
+    "起号02点击输入你的昵称": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    317,
+                    293,
+                    559,
+                    168
+                ],
+                "expected": [
+                    "输入你的昵称"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号02输入昵称"
+        ]
+    },
+    "起号02点击返回按钮": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    4,
+                    1,
+                    249,
+                    126
+                ],
+                "template": [
+                    "返回按钮.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 1000
+    },
+    "起号02点击选择一个强化锤": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    767,
+                    12,
+                    335,
+                    134
+                ],
+                "expected": [
+                    "强化锤"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    945,
+                    154,
+                    251,
+                    73
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号02消耗一个强化锤"
+        ]
+    },
+    "起号02点击领取忍阶": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    595,
+                    230,
+                    643,
+                    316
+                ],
+                "expected": [
+                    "点击领取"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号02点击任意位置继续",
+            "起号02点击领取忍阶"
+        ]
+    },
+    "起号02确定": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    490,
+                    597,
+                    341,
+                    106
+                ],
+                "expected": [
+                    "^确定$"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "起号02你的名字"
+        ]
+    },
+    "起号02确定昵称": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    373,
+                    364,
+                    585,
+                    209
+                ],
+                "expected": [
+                    "确定"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号02响彻忍界"
+        ]
+    },
+    "起号02经验点兑换页面": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    298,
+                    174,
+                    699,
+                    216
+                ],
+                "expected": [
+                    "^经验点兑换$"
+                ]
+            }
+        },
+        "next": [
+            "起号02点击MAX"
+        ]
+    },
+    "起号02结束": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    871,
+                    5,
+                    305,
+                    120
+                ],
+                "expected": [
+                    "第五关"
+                ]
+            }
+        }
+    },
+    "起号02考试开始": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    146,
+                    147,
+                    214,
+                    444
+                ],
+                "expected": [
+                    "考试开始"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 2000
+    },
+    "起号02跳跃1": {
+        "pre_delay": 0,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1058,
+                    596,
+                    75,
+                    43
+                ]
+            }
+        },
+        "repeat": 3,
+        "repeat_delay": 200,
+        "next": [
+            "起号02武器"
+        ]
+    },
+    "起号02输入昵称": {
+        "action": {
+            "type": "InputText",
+            "param": {
+                "input_text": "github搜mr3a"
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号02确定昵称"
+        ]
+    },
+    "起号02点击确定2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    430,
+                    333,
+                    463,
+                    386
+                ],
+                "expected": [
+                    "确定"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 2000,
+        "next": [
+            "起号02再见经验点兑换页面",
+            "[JumpBack]起号02升级"
+        ]
+    }
+}

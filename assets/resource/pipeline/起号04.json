@@ -1,0 +1,399 @@
+{
+    "起号04发现后暂时未发现黑龙boss": {
+        "pre_delay": 0,
+        "post_delay": 1500,
+        "next": [
+            "起号04boss存活",
+            "起号04又发现黑龙boss"
+        ]
+    },
+    "起号04又发现黑龙boss": {
+        "pre_delay": 0,
+        "post_delay": 1500,
+        "next": [
+            "起号04boss存活",
+            "起号04处理结算或者重开"
+        ]
+    },
+    "起号04处理结算或者重开": {
+        "timeout": 40000,
+        "next": [
+            "起号04boss复活",
+            "起号04结束",
+            "[JumpBack]起号04首次通关奖励",
+            "[JumpBack]起号04结算确定"
+        ]
+    },
+    "起号04boss复活": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    780,
+                    43,
+                    112,
+                    55
+                ],
+                "expected": [
+                    "×\\d",
+                    "x\\d",
+                    "X\\d"
+                ]
+            }
+        },
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "起号04暂停页面",
+            "[JumpBack]起号04点击暂停"
+        ]
+    },
+    "起号04暂停页面": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    26,
+                    67,
+                    453,
+                    147
+                ],
+                "expected": [
+                    "关卡选择"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号04暂停页面",
+            "起号04开始游戏"
+        ]
+    },
+    "起号04点击暂停": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1064,
+                    1,
+                    216,
+                    115
+                ],
+                "expected": [
+                    "\\d\\d\\d"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1233,
+                    22,
+                    13,
+                    21
+                ]
+            }
+        }
+    },
+    "起号04entry": {
+        "next": [
+            "起号04开始游戏"
+        ]
+    },
+    "起号04进入游戏": {
+        "timeout": 60000,
+        "rate_limit": 30,
+        "next": [
+            "起号04发现下滑按钮"
+        ]
+    },
+    "起号04跳跃": {
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": [
+                    605,
+                    391,
+                    200,
+                    100
+                ],
+                "lower": [
+                    [
+                        230,
+                        230,
+                        90
+                    ]
+                ],
+                "upper": [
+                    [
+                        255,
+                        255,
+                        130
+                    ]
+                ],
+                "connected": true,
+                "count": 400
+            }
+        },
+        "pre_delay": 0,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1087,
+                    595,
+                    1,
+                    1
+                ]
+            }
+        },
+        "next": [
+            "起号04大招"
+        ]
+    },
+    "起号04未识别到火球": {
+        "next": [
+            "起号04发现后暂时未发现黑龙boss"
+        ]
+    },
+    "起号04武器": {
+        "pre_delay": 0,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    381,
+                    621,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_delay": 0,
+        "next": [
+            "起号04boss存活",
+            "起号04发现后暂时未发现黑龙boss"
+        ]
+    },
+    "起号04大招": {
+        "pre_delay": 0,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    76,
+                    347,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_delay": 0,
+        "next": [
+            "起号04武器"
+        ]
+    },
+    "起号04boss存活": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    780,
+                    43,
+                    112,
+                    55
+                ],
+                "expected": [
+                    "×\\d",
+                    "x\\d",
+                    "X\\d"
+                ]
+            }
+        },
+        "pre_delay": 0,
+        "post_delay": 0,
+        "timeout": 12000,
+        "rate_limit": 100,
+        "next": [
+            "起号04跳跃"
+        ],
+        "on_error": [
+            "起号04未识别到火球"
+        ]
+    },
+    "起号04开始游戏": {
+        "next": [
+            "起号04点击出发",
+            "[JumpBack]起号04点击契约"
+        ]
+    },
+    "起号04点击契约": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    515,
+                    139,
+                    181,
+                    432
+                ],
+                "expected": [
+                    "契约",
+                    "契約"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 2000
+    },
+    "起号04点击出发": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    868,
+                    543,
+                    333,
+                    159
+                ],
+                "expected": [
+                    "出发"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "起号04点击出发",
+            "起号04进入游戏"
+        ]
+    },
+    "起号04黑龙boss": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    780,
+                    43,
+                    112,
+                    55
+                ],
+                "expected": [
+                    "×\\d",
+                    "x\\d",
+                    "X\\d"
+                ]
+            }
+        },
+        "next": [
+            "起号04boss存活",
+            "起号04发现后暂时未发现黑龙boss"
+        ]
+    },
+    "起号04发现下滑按钮": {
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": [
+                    230,
+                    612,
+                    1,
+                    1
+                ],
+                "lower": [
+                    [
+                        255,
+                        255,
+                        255
+                    ]
+                ],
+                "upper": [
+                    [
+                        255,
+                        255,
+                        255
+                    ]
+                ]
+            }
+        },
+        "pre_delay": 0,
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "qh_level_1_4",
+                "target": [
+                    230,
+                    612,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_delay": 0,
+        "timeout": 30000,
+        "next": [
+            "起号04黑龙boss"
+        ]
+    },
+    "起号04首次通关奖励": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    480,
+                    62,
+                    331,
+                    142
+                ],
+                "expected": [
+                    "首次通关奖励"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "起号04结算确定": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    483,
+                    572,
+                    346,
+                    148
+                ],
+                "expected": [
+                    "确定"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "起号04结束": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    880,
+                    12,
+                    245,
+                    107
+                ],
+                "expected": [
+                    "第五关"
+                ]
+            }
+        }
+    }
+}

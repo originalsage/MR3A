@@ -1,0 +1,723 @@
+{
+    "起号11点击新忍阶": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    45,
+                    109,
+                    352,
+                    136
+                ],
+                "expected": [
+                    "新忍阶"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    64,
+                    49,
+                    24,
+                    29
+                ]
+            }
+        },
+        "post_delay": 2000
+    },
+    "起号11点击返回主页面": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1041,
+                    74,
+                    235,
+                    243
+                ],
+                "expected": [
+                    "好友排行",
+                    "忍者之书",
+                    "训练所"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    46,
+                    46,
+                    27,
+                    22
+                ]
+            }
+        },
+        "post_delay": 2000
+    },
+    "起号11点击忍阶": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    12,
+                    583,
+                    212,
+                    130
+                ],
+                "expected": [
+                    "忍者"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    45,
+                    46,
+                    32,
+                    35
+                ]
+            }
+        },
+        "post_delay": 2000
+    },
+    "起号11忍阶页面": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    4,
+                    595,
+                    266,
+                    124
+                ],
+                "expected": [
+                    "当前忍阶"
+                ]
+            }
+        },
+        "next": [
+            "起号11领取完忍阶",
+            "[JumpBack]起号11点击领取",
+            "[JumpBack]起号11点击继续"
+        ]
+    },
+    "起号11点击领取": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    599,
+                    239,
+                    639,
+                    152
+                ],
+                "expected": [
+                    "点击领取"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "起号11点击继续": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    494,
+                    585,
+                    322,
+                    132
+                ],
+                "expected": [
+                    "继续"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1109,
+                    395,
+                    151,
+                    109
+                ]
+            }
+        }
+    },
+    "起号11领取完忍阶": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    979,
+                    607,
+                    301,
+                    109
+                ],
+                "expected": [
+                    "下一忍阶"
+                ]
+            }
+        },
+        "next": [
+            "起号11新宝物",
+            "[JumpBack]起号11返回主页面",
+            "[JumpBack]起号11新功能点击继续"
+        ]
+    },
+    "起号11返回主页面": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    5,
+                    5,
+                    243,
+                    200
+                ],
+                "template": [
+                    "返回按钮.png",
+                    "家族返回按钮.png",
+                    "退出召唤按钮.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 2000
+    },
+    "起号11新功能点击继续": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    476,
+                    484,
+                    306,
+                    127
+                ],
+                "expected": [
+                    "继续"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "起号11新宝物": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    353,
+                    424,
+                    301,
+                    111
+                ],
+                "expected": [
+                    "新宝物"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    346,
+                    634,
+                    21,
+                    32
+                ]
+            }
+        },
+        "next": [
+            "起号11宝物页面点击继续",
+            "[JumpBack]起号11搭配宝物",
+            "起号11新宝物",
+            "[JumpBack]起号11点击宝物"
+        ]
+    },
+    "起号11搭配宝物": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    322,
+                    232,
+                    669,
+                    205
+                ],
+                "expected": [
+                    "宝物"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "起号11点击宝物": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    791,
+                    601,
+                    466,
+                    106
+                ],
+                "expected": [
+                    "宝物合成"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    836,
+                    233,
+                    68,
+                    73
+                ]
+            }
+        }
+    },
+    "起号11宝物页面点击继续": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1062,
+                    617,
+                    218,
+                    102
+                ],
+                "expected": [
+                    "点击继续"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "起号11宝物页面点击继续",
+            "[JumpBack]起号11点击装备",
+            "[JumpBack]起号11选择宝物的位置",
+            "起号11主页面点击故事",
+            "[JumpBack]起号11返回主页面"
+        ]
+    },
+    "起号11点击装备": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    941,
+                    404,
+                    327,
+                    228
+                ],
+                "expected": [
+                    "装备"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "起号11选择宝物的位置": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    277,
+                    416,
+                    412,
+                    125
+                ],
+                "expected": [
+                    "宝物的位置"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    75,
+                    154,
+                    43,
+                    57
+                ]
+            }
+        }
+    },
+    "起号11主页面点击故事": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    500,
+                    712
+                ],
+                "template": [
+                    "主页面.png"
+                ],
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    857,
+                    276,
+                    95,
+                    46
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号11结束",
+            "[JumpBack]起号11点击第二章"
+        ]
+    },
+    "起号11点击第二章": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    997,
+                    51,
+                    283,
+                    299
+                ],
+                "expected": [
+                    "忍者之书",
+                    "好友排行",
+                    "训练所"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    398,
+                    505,
+                    71,
+                    86
+                ]
+            }
+        },
+        "post_delay": 2000
+    },
+    "起号11结束": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    876,
+                    2,
+                    262,
+                    125
+                ],
+                "expected": [
+                    "第九关"
+                ]
+            }
+        }
+    },
+    "起号11entry": {
+        "next": [
+            "起号11点击出发",
+            "[JumpBack]起号11点击苍牙之怒"
+        ]
+    },
+    "起号11点击苍牙之怒": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    865,
+                    139,
+                    181,
+                    432
+                ],
+                "expected": [
+                    "苍牙"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 2000
+    },
+    "起号11点击出发": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    868,
+                    543,
+                    333,
+                    159
+                ],
+                "expected": [
+                    "出发"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 2000,
+        "next": [
+            "起号11点击出发",
+            "起号11进入关卡"
+        ]
+    },
+    "起号11进入关卡": {
+        "timeout": 90000,
+        "rate_limit": 30,
+        "next": [
+            "起号11发现下滑按钮"
+        ]
+    },
+    "起号11首次通关奖励": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    461,
+                    40,
+                    351,
+                    160
+                ],
+                "expected": [
+                    "首次通关奖励"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "起号11通关确定": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    392,
+                    541,
+                    503,
+                    174
+                ],
+                "expected": [
+                    "确定"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "起号11返回章节页面": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    894,
+                    8,
+                    235,
+                    126
+                ],
+                "expected": [
+                    "第九关"
+                ]
+            }
+        },
+        "next": [
+            "起号11忍阶页面",
+            "[JumpBack]起号11点击新忍阶",
+            "[JumpBack]起号11点击返回主页面",
+            "[JumpBack]起号11点击忍阶"
+        ]
+    },
+    "起号11死亡再来一次": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    643,
+                    512,
+                    339,
+                    168
+                ],
+                "expected": [
+                    "再来一次"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "起号11死亡再来一次",
+            "起号11进入关卡"
+        ]
+    },
+    "起号11发现下滑按钮": {
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": [
+                    230,
+                    612,
+                    1,
+                    1
+                ],
+                "lower": [
+                    [
+                        255,
+                        255,
+                        255
+                    ]
+                ],
+                "upper": [
+                    [
+                        255,
+                        255,
+                        255
+                    ]
+                ]
+            }
+        },
+        "pre_delay": 0,
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "qh_level_2_6",
+                "target": [
+                    230,
+                    612,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_delay": 0,
+        "timeout": 40000,
+        "next": [
+            "[JumpBack]起号11boss存活",
+            "起号11死亡再来一次",
+            "[JumpBack]起号11首次通关奖励",
+            "[JumpBack]起号11通关确定",
+            "起号11返回章节页面"
+        ]
+    },
+    "起号11二段跳": {
+        "pre_delay": 0,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1068,
+                    596,
+                    1,
+                    1
+                ]
+            }
+        },
+        "repeat": 2,
+        "repeat_delay": 300,
+        "post_delay": 300
+    },
+    "起号11跳": {
+        "pre_delay": 0,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1068,
+                    596,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_delay": 150,
+        "next": [
+            "起号11二段跳"
+        ]
+    },
+    "起号11大招": {
+        "pre_delay": 0,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    76,
+                    347,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_delay": 50,
+        "next": [
+            "起号11跳"
+        ]
+    },
+    "起号11boss存活": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    780,
+                    43,
+                    112,
+                    55
+                ],
+                "expected": [
+                    "×\\d",
+                    "x\\d",
+                    "X\\d"
+                ]
+            }
+        },
+        "pre_delay": 0,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    381,
+                    621,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_delay": 50,
+        "next": [
+            "起号11大招"
+        ]
+    }
+}

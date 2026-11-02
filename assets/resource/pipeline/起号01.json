@@ -1,0 +1,324 @@
+{
+    "起号01上翻躲避蝙蝠": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    435,
+                    156,
+                    431,
+                    115
+                ],
+                "expected": [
+                    "上翻"
+                ]
+            }
+        },
+        "pre_delay": 0,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1058,
+                    596,
+                    75,
+                    43
+                ]
+            }
+        },
+        "post_delay": 5700,
+        "next": [
+            "起号01跳跃1"
+        ]
+    },
+    "起号01跳跃2": {
+        "pre_delay": 0,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1058,
+                    596,
+                    75,
+                    43
+                ]
+            }
+        },
+        "repeat": 2,
+        "repeat_delay": 300,
+        "post_delay": 2900,
+        "next": [
+            "起号01跳跃3"
+        ]
+    },
+    "起号01跳跃3": {
+        "pre_delay": 0,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1058,
+                    596,
+                    75,
+                    43
+                ]
+            }
+        },
+        "repeat": 2,
+        "repeat_delay": 300,
+        "post_delay": 1500,
+        "next": [
+            "起号01跳跃4"
+        ]
+    },
+    "起号01跳跃4": {
+        "pre_delay": 0,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1058,
+                    596,
+                    75,
+                    43
+                ]
+            }
+        },
+        "repeat": 2,
+        "repeat_delay": 300,
+        "post_delay": 0,
+        "timeout": 60000,
+        "next": [
+            "[JumpBack]起号01首次通关奖励",
+            "[JumpBack]起号01确定奖励",
+            "起号01结束"
+        ]
+    },
+    "起号01首次通关奖励": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    478,
+                    63,
+                    314,
+                    125
+                ],
+                "expected": [
+                    "首次通关奖励"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "起号01确定奖励": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    438,
+                    477,
+                    507,
+                    241
+                ],
+                "expected": [
+                    "确定"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "起号01结束": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    905,
+                    20,
+                    218,
+                    83
+                ],
+                "expected": [
+                    "通关第五关解锁"
+                ]
+            }
+        }
+    },
+    "起号01entry": {
+        "next": [
+            "起号01六个月之前",
+            "[JumpBack]起号01点击登录",
+            "[JumpBack]起号01右上角跳过"
+        ]
+    },
+    "起号01右上角跳过": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1154,
+                    25,
+                    40,
+                    15
+                ]
+            }
+        },
+        "next": [
+            "起号01中间动画"
+        ]
+    },
+    "起号01六个月之前": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    378,
+                    295,
+                    527,
+                    187
+                ],
+                "expected": [
+                    "六个月",
+                    "忍之谷"
+                ]
+            }
+        },
+        "next": [
+            "起号01忍者考试",
+            "[JumpBack]起号01一直点跳跃"
+        ]
+    },
+    "起号01点击登录": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    333,
+                    382,
+                    604,
+                    213
+                ],
+                "expected": [
+                    "登录"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "起号01中间动画": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    579,
+                    118,
+                    149,
+                    97
+                ]
+            }
+        }
+    },
+    "起号01一直点跳跃": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {
+                "roi": [
+                    980,
+                    520,
+                    296,
+                    196
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1071,
+                    604,
+                    45,
+                    46
+                ]
+            }
+        }
+    },
+    "起号01下翻躲避蝙蝠": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    435,
+                    156,
+                    431,
+                    115
+                ],
+                "expected": [
+                    "下翻"
+                ]
+            }
+        },
+        "pre_delay": 0,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    163,
+                    600,
+                    62,
+                    38
+                ]
+            }
+        },
+        "post_delay": 0,
+        "next": [
+            "起号01上翻躲避蝙蝠"
+        ]
+    },
+    "起号01忍者考试": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    198,
+                    10,
+                    719,
+                    160
+                ],
+                "expected": [
+                    "小黑",
+                    "忍者考试"
+                ]
+            }
+        },
+        "timeout": 60000,
+        "next": [
+            "起号01下翻躲避蝙蝠"
+        ]
+    },
+    "起号01跳跃1": {
+        "pre_delay": 0,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1058,
+                    596,
+                    75,
+                    43
+                ]
+            }
+        },
+        "repeat": 2,
+        "repeat_delay": 300,
+        "post_delay": 3500,
+        "next": [
+            "起号01跳跃2"
+        ]
+    }
+}

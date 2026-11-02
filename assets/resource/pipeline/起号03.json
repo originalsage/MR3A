@@ -1,0 +1,147 @@
+{
+    "起号03entry": {
+        "next": [
+            "起号03点击出发",
+            "[JumpBack]起号03点击黑龙洞穴"
+        ]
+    },
+    "起号03点击出发": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    868,
+                    543,
+                    333,
+                    159
+                ],
+                "expected": [
+                    "出发"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 60000,
+        "rate_limit": 30,
+        "next": [
+            "起号03发现下翻按钮"
+        ]
+    },
+    "起号03点击黑龙洞穴": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    334,
+                    146,
+                    176,
+                    428
+                ],
+                "expected": [
+                    "黑龙洞穴"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 2000
+    },
+    "起号03发现下翻按钮": {
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": [
+                    189,
+                    606,
+                    1,
+                    1
+                ],
+                "lower": [
+                    [
+                        255,
+                        255,
+                        255
+                    ]
+                ],
+                "upper": [
+                    [
+                        255,
+                        255,
+                        255
+                    ]
+                ]
+            }
+        },
+        "pre_delay": 0,
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "qh_level_1_3"
+            }
+        },
+        "post_delay": 0,
+        "timeout": 40000,
+        "next": [
+            "起号03结束",
+            "[JumpBack]起号03首次通关奖励",
+            "[JumpBack]起号03结算确定"
+        ]
+    },
+    "起号03首次通关奖励": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    480,
+                    62,
+                    331,
+                    142
+                ],
+                "expected": [
+                    "首次通关奖励"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "起号03结算确定": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    483,
+                    572,
+                    346,
+                    148
+                ],
+                "expected": [
+                    "确定"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "起号03结束": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    880,
+                    12,
+                    245,
+                    107
+                ],
+                "expected": [
+                    "第五关"
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,1951 @@
+{
+    "起号05entry": {
+        "next": [
+            "起号05点击出发",
+            "[JumpBack]起号05御龙飞天"
+        ]
+    },
+    "起号05御龙飞天": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    708,
+                    159,
+                    168,
+                    401
+                ],
+                "expected": [
+                    "龙飞天"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 2000
+    },
+    "起号05点击出发": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    825,
+                    526,
+                    419,
+                    184
+                ],
+                "expected": [
+                    "出发"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 180000,
+        "rate_limit": 2000,
+        "next": [
+            "起号05点击出发",
+            "[JumpBack]起号05确定",
+            "起号05查看第二章故事",
+            "[JumpBack]起号05继续"
+        ]
+    },
+    "起号05确定": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    477,
+                    574,
+                    318,
+                    146
+                ],
+                "expected": [
+                    "确定"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 2000
+    },
+    "起号05返回章节": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    2,
+                    1,
+                    231,
+                    164
+                ],
+                "template": [
+                    "返回按钮.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "起号05查看第二章故事": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    288,
+                    428,
+                    336,
+                    204
+                ],
+                "expected": [
+                    "^查看第二章故事$"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    411,
+                    622,
+                    41,
+                    30
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号05你获得了新忍阶"
+        ]
+    },
+    "起号05你获得了新忍阶": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    78,
+                    147,
+                    292,
+                    92
+                ],
+                "expected": [
+                    "新忍阶"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    48,
+                    44,
+                    33,
+                    29
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号05点击领取",
+            "[JumpBack]起号05主页点击忍阶"
+        ]
+    },
+    "起号05主页点击忍阶": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    48,
+                    44,
+                    35,
+                    41
+                ]
+            }
+        },
+        "post_delay": 1000
+    },
+    "起号05点击领取": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1037,
+                    274,
+                    203,
+                    115
+                ],
+                "expected": [
+                    "声望",
+                    "点击领取"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号05点击继续",
+            "起号05点击领取"
+        ]
+    },
+    "起号05点击继续": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    505,
+                    572,
+                    319,
+                    148
+                ],
+                "expected": [
+                    "继续"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1026,
+                    534,
+                    114,
+                    70
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号05查看你的通灵兽",
+            "[JumpBack]起号05点击下一忍阶",
+            "[JumpBack]起号05点击下忍",
+            "[JumpBack]起号05点击返回按钮",
+            "[JumpBack]起号05点击新功能继续"
+        ]
+    },
+    "起号05点击下忍": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    563,
+                    192,
+                    181,
+                    392
+                ],
+                "expected": [
+                    "下"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "起号05点击下一忍阶": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1025,
+                    627,
+                    242,
+                    93
+                ],
+                "expected": [
+                    "下一忍阶"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "起号05点击返回按钮": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    2,
+                    1,
+                    231,
+                    164
+                ],
+                "template": [
+                    "返回按钮.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "起号05点击新功能继续": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    494,
+                    500,
+                    268,
+                    111
+                ],
+                "expected": [
+                    "继续"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "起号05查看你的通灵兽": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    49,
+                    146,
+                    252,
+                    67
+                ],
+                "expected": [
+                    "查看你的通灵兽"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    37,
+                    271,
+                    37,
+                    25
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号05点击进入竞技场1",
+            "[JumpBack]起号05点击取消",
+            "[JumpBack]起号05点击巡逻",
+            "[JumpBack]起号05巡逻点击左上角返回",
+            "[JumpBack]起号05点击竞技场新功能继续"
+        ]
+    },
+    "起号05点击巡逻": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    878,
+                    588,
+                    366,
+                    129
+                ],
+                "expected": [
+                    "^巡逻$",
+                    "^开始巡逻$"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 1000
+    },
+    "起号05点击取消": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    303,
+                    427,
+                    382,
+                    219
+                ],
+                "expected": [
+                    "取消"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "起号05巡逻点击左上角返回": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    7,
+                    5,
+                    198,
+                    124
+                ],
+                "template": [
+                    "返回按钮.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "起号05点击竞技场新功能继续": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    490,
+                    491,
+                    300,
+                    134
+                ],
+                "expected": [
+                    "继续"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 1000
+    },
+    "起号05点击进入竞技场1": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    799,
+                    490,
+                    270,
+                    95
+                ],
+                "expected": [
+                    "竞技场"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1083,
+                    587,
+                    75,
+                    50
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号05点击进入竞技场2"
+        ]
+    },
+    "起号05点击进入竞技场2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    336,
+                    272,
+                    273,
+                    112
+                ],
+                "expected": [
+                    "竞技场"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    384,
+                    381,
+                    87,
+                    117
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "timeout": 120000,
+        "next": [
+            "起号05前往竞技场商店",
+            "[JumpBack]起号05点击开始游戏",
+            "[JumpBack]起号05点击竞技场结算确定",
+            "[JumpBack]起号05排名奖励规则",
+            "[JumpBack]起号05新手组",
+            "[JumpBack]起号05点击经典模式"
+        ]
+    },
+    "起号05点击经典模式": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    368,
+                    495,
+                    571,
+                    220
+                ],
+                "template": [
+                    "经典模式.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "起号05点击开始游戏": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    835,
+                    563,
+                    309,
+                    150
+                ],
+                "expected": [
+                    "开始游戏"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "起号05点击竞技场结算确定": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    318,
+                    560,
+                    945,
+                    155
+                ],
+                "expected": [
+                    "确定"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 2000
+    },
+    "起号05新手组": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    470,
+                    111,
+                    644,
+                    585
+                ],
+                "expected": [
+                    "组内玩家",
+                    "排名状况"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    281,
+                    5,
+                    63,
+                    710
+                ]
+            }
+        },
+        "post_delay": 0,
+        "next": [
+            "起号05新手组",
+            "起号05点开了新手组"
+        ]
+    },
+    "起号05继续": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    477,
+                    574,
+                    318,
+                    146
+                ],
+                "expected": [
+                    "继续"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 2000,
+        "next": [
+            "起号05返回章节",
+            "起号05无返回按钮"
+        ]
+    },
+    "起号05无返回按钮": {},
+    "起号05前往竞技场商店": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    946,
+                    137,
+                    227,
+                    77
+                ],
+                "expected": [
+                    "前往竞技场商店"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1203,
+                    43,
+                    39,
+                    41
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号05恭喜获得",
+            "[JumpBack]起号05哦吼吼"
+        ]
+    },
+    "起号05哦吼吼": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1085,
+                    629,
+                    110,
+                    31
+                ]
+            }
+        },
+        "next": [
+            "起号05抽奖一次"
+        ]
+    },
+    "起号05抽奖一次": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    947,
+                    286,
+                    99,
+                    44
+                ]
+            }
+        }
+    },
+    "起号05恭喜获得": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    463,
+                    0,
+                    397,
+                    146
+                ],
+                "expected": [
+                    "恭喜获得"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    322,
+                    623,
+                    130,
+                    57
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号05新天赋",
+            "[JumpBack]起号05天赋在哪啊",
+            "[JumpBack]起号05抽奖返回",
+            "起号05恭喜获得"
+        ]
+    },
+    "起号05天赋在哪啊": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    914,
+                    538,
+                    347,
+                    176
+                ],
+                "expected": [
+                    "天赋在哪",
+                    "知道了"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "起号05抽奖返回": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    3,
+                    0,
+                    138,
+                    102
+                ],
+                "template": [
+                    "返回按钮.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "起号05新天赋": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    86,
+                    496,
+                    258,
+                    91
+                ],
+                "expected": [
+                    "新天赋"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    25,
+                    627,
+                    50,
+                    46
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号05点击天赋"
+        ]
+    },
+    "起号05点击天赋": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    709,
+                    305,
+                    528,
+                    237
+                ],
+                "expected": [
+                    "生命值",
+                    "攻击力"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    575,
+                    592,
+                    32,
+                    32
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号05选择可解锁天赋",
+            "[JumpBack]起号05属性天赋",
+            "起号05点击天赋"
+        ]
+    },
+    "起号05属性天赋": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    286,
+                    221,
+                    707,
+                    224
+                ],
+                "expected": [
+                    "属性天赋",
+                    "忍者天赋"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    636,
+                    496,
+                    101,
+                    89
+                ]
+            }
+        }
+    },
+    "起号05选择可解锁天赋": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    636,
+                    236,
+                    256,
+                    86
+                ],
+                "expected": [
+                    "可解锁"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    626,
+                    345,
+                    25,
+                    34
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号05消耗火纹石"
+        ]
+    },
+    "起号05消耗火纹石": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    849,
+                    474,
+                    317,
+                    103
+                ],
+                "expected": [
+                    "火纹石"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1026,
+                    589,
+                    119,
+                    39
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号05天赋获得提升"
+        ]
+    },
+    "起号05天赋获得提升": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    329,
+                    258,
+                    597,
+                    187
+                ],
+                "expected": [
+                    "天赋获得提升"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    551,
+                    484,
+                    182,
+                    86
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号05天赋获得提升",
+            "起号05点击流派炎魂"
+        ]
+    },
+    "起号05点击流派炎魂": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    7,
+                    187,
+                    279,
+                    313
+                ],
+                "expected": [
+                    "炎魂"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号05忍者天赋"
+        ]
+    },
+    "起号05忍者天赋": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    284,
+                    238,
+                    672,
+                    186
+                ],
+                "expected": [
+                    "忍者天赋"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    560,
+                    454,
+                    70,
+                    49
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号05选择可解锁天赋2"
+        ]
+    },
+    "起号05选择可解锁天赋2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    658,
+                    236,
+                    248,
+                    125
+                ],
+                "expected": [
+                    "可解锁"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    625,
+                    355,
+                    25,
+                    19
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号05消耗火纹石2"
+        ]
+    },
+    "起号05消耗火纹石2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    847,
+                    470,
+                    340,
+                    109
+                ],
+                "expected": [
+                    "火纹石"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1094,
+                    599,
+                    88,
+                    29
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号05天赋获得提升2"
+        ]
+    },
+    "起号05天赋获得提升2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    523,
+                    289,
+                    648,
+                    125
+                ],
+                "expected": [
+                    "天赋获得提升"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    554,
+                    492,
+                    193,
+                    68
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号05天赋获得提升2",
+            "起号05忍者越强"
+        ]
+    },
+    "起号05忍者越强": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    284,
+                    230,
+                    663,
+                    193
+                ],
+                "expected": [
+                    "天赋学习的越多"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    589,
+                    477,
+                    167,
+                    63
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号05主页面点击忍阶",
+            "[JumpBack]起号05处理叉叉弹窗",
+            "[JumpBack]起号05返回"
+        ]
+    },
+    "起号05返回": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    4,
+                    1,
+                    266,
+                    141
+                ],
+                "template": [
+                    "返回按钮.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "起号05处理叉叉弹窗": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    833,
+                    5,
+                    440,
+                    441
+                ],
+                "template": [
+                    "叉叉0.png",
+                    "叉叉1.png",
+                    "叉叉2.png",
+                    "叉叉3.png",
+                    "叉叉4.png"
+                ],
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": {
+            "time": 400,
+            "threshold": 0.8
+        }
+    },
+    "起号05主页面点击忍阶": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    500,
+                    712
+                ],
+                "template": [
+                    "主页面.png"
+                ],
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    43,
+                    46,
+                    35,
+                    35
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号05点击忍阶领取"
+        ]
+    },
+    "起号05点击忍阶领取": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    585,
+                    221,
+                    664,
+                    241
+                ],
+                "expected": [
+                    "点击领取"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号05点击忍阶继续"
+        ]
+    },
+    "起号05点击忍阶继续": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    479,
+                    566,
+                    327,
+                    152
+                ],
+                "expected": [
+                    "继续"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    969,
+                    506,
+                    174,
+                    98
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号05点击进入召唤界面",
+            "[JumpBack]起号05点击召唤新功能继续",
+            "[JumpBack]起号05忍阶返回主页面"
+        ]
+    },
+    "起号05忍阶返回主页面": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    3,
+                    2,
+                    180,
+                    126
+                ],
+                "template": [
+                    "返回按钮.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "起号05点击召唤新功能继续": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    522,
+                    509,
+                    244,
+                    111
+                ],
+                "expected": [
+                    "继续"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    969,
+                    506,
+                    174,
+                    98
+                ]
+            }
+        }
+    },
+    "起号05点击进入召唤界面": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    281,
+                    485,
+                    289,
+                    133
+                ],
+                "expected": [
+                    "召唤界面"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    274,
+                    631,
+                    24,
+                    33
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号05点击限时免费一次"
+        ]
+    },
+    "起号05点击限时免费一次": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    880,
+                    468,
+                    384,
+                    252
+                ],
+                "expected": [
+                    "限时免费一次"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号05确定抽出的武器",
+            "起号05点击限时免费一次",
+            "[JumpBack]起号05点中间宝箱"
+        ]
+    },
+    "起号05点中间宝箱": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    595,
+                    373,
+                    98,
+                    92
+                ]
+            }
+        }
+    },
+    "起号05确定抽出的武器": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    324,
+                    573,
+                    312,
+                    146
+                ],
+                "expected": [
+                    "确定"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号05装备新武器",
+            "[JumpBack]起号05退出召唤"
+        ]
+    },
+    "起号05退出召唤": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    5,
+                    5,
+                    243,
+                    200
+                ],
+                "template": [
+                    "返回按钮.png",
+                    "家族返回按钮.png",
+                    "退出召唤按钮.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "起号05装备新武器": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    201,
+                    465,
+                    247,
+                    122
+                ],
+                "expected": [
+                    "新武器"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    153,
+                    624,
+                    34,
+                    41
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号05选择新武器",
+            "[JumpBack]起号05稀有度"
+        ]
+    },
+    "起号05点开了新手组": {},
+    "起号05排名奖励规则": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    568,
+                    90,
+                    417,
+                    141
+                ],
+                "expected": [
+                    "排名奖励规则"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    975,
+                    23,
+                    58,
+                    42
+                ]
+            }
+        }
+    },
+    "起号05稀有度": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    388,
+                    239,
+                    500,
+                    200
+                ],
+                "expected": [
+                    "稀有"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    338,
+                    500,
+                    130,
+                    79
+                ]
+            }
+        },
+        "post_delay": 1000
+    },
+    "起号05选择新武器": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    247,
+                    331,
+                    234,
+                    111
+                ],
+                "expected": [
+                    "选择新武器"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    216,
+                    167,
+                    49,
+                    57
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号05点击装备"
+        ]
+    },
+    "起号05点击装备": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    502,
+                    522,
+                    326,
+                    198
+                ],
+                "expected": [
+                    "点击装备"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号05装备主手"
+        ]
+    },
+    "起号05装备主手": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    384,
+                    43,
+                    492,
+                    264
+                ],
+                "expected": [
+                    "主手武器"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    601,
+                    197,
+                    49,
+                    68
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号05识别到MAX",
+            "[JumpBack]起号05查看技能等级",
+            "[JumpBack]起号05快捷选择",
+            "[JumpBack]起号05点击强化"
+        ]
+    },
+    "起号05点击强化": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1124,
+                    547,
+                    144,
+                    171
+                ],
+                "expected": [
+                    "强化"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "起号05查看技能等级": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    627,
+                    221,
+                    343,
+                    113
+                ],
+                "expected": [
+                    "技能等级"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    892,
+                    409,
+                    38,
+                    43
+                ]
+            }
+        }
+    },
+    "起号05快捷选择": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    852,
+                    592,
+                    411,
+                    122
+                ],
+                "expected": [
+                    "快捷选择"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "起号05识别到MAX": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    588,
+                    74,
+                    690,
+                    349
+                ],
+                "expected": [
+                    "MAX"
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号05点击普通锤子MAX"
+        ]
+    },
+    "起号05点击普通锤子MAX": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1030,
+                    114,
+                    241,
+                    138
+                ],
+                "expected": [
+                    "MAX"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "起号05武器强化页面下滑"
+        ]
+    },
+    "起号05武器强化页面下滑": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    573,
+                    574,
+                    706,
+                    133
+                ],
+                "expected": [
+                    "取消"
+                ]
+            }
+        },
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    927,
+                    585,
+                    40,
+                    29
+                ],
+                "end": [
+                    [
+                        936,
+                        147,
+                        41,
+                        51
+                    ]
+                ]
+            }
+        },
+        "post_delay": 1500,
+        "next": [
+            "起号05点击锤子1"
+        ]
+    },
+    "起号05点击锤子1": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1174,
+                    133,
+                    68,
+                    30
+                ]
+            }
+        },
+        "next": [
+            "起号05点击锤子2"
+        ]
+    },
+    "起号05点击锤子2": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1177,
+                    246,
+                    59,
+                    35
+                ]
+            }
+        },
+        "next": [
+            "起号05点击锤子3"
+        ]
+    },
+    "起号05点击锤子3": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1176,
+                    366,
+                    61,
+                    25
+                ]
+            }
+        },
+        "next": [
+            "起号05点击锤子4"
+        ]
+    },
+    "起号05点击锤子4": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1174,
+                    479,
+                    60,
+                    23
+                ]
+            }
+        },
+        "next": [
+            "起号05点击忍刀"
+        ]
+    },
+    "起号05点击忍刀": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1172,
+                    592,
+                    62,
+                    32
+                ]
+            }
+        },
+        "next": [
+            "起号05点击强化2"
+        ]
+    },
+    "起号05点击强化2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    842,
+                    531,
+                    435,
+                    184
+                ],
+                "expected": [
+                    "强化"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 1000,
+        "next": [
+            "起号05点击确定强化",
+            "起号05强化完回到主页面点击故事",
+            "[JumpBack]起号05强化结束返回主页面"
+        ]
+    },
+    "起号05点击确定强化": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    443,
+                    314,
+                    422,
+                    325
+                ],
+                "expected": [
+                    "确定"
+                ]
+            }
+        },
+        "pre_delay": 1000,
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "起号05强化完回到主页面点击故事",
+            "[JumpBack]起号05强化结束返回主页面"
+        ]
+    },
+    "起号05强化结束返回主页面": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    6,
+                    3,
+                    265,
+                    156
+                ],
+                "template": [
+                    "返回按钮.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 3000
+    },
+    "起号05强化完回到主页面点击故事": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    500,
+                    712
+                ],
+                "template": [
+                    "主页面.png"
+                ],
+                "green_mask": true
+            }
+        },
+        "pre_delay": 1000,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    857,
+                    276,
+                    95,
+                    46
+                ]
+            }
+        },
+        "next": [
+            "起号05结束",
+            "[JumpBack]起号05点击第二章"
+        ]
+    },
+    "起号05点击第二章": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    997,
+                    51,
+                    283,
+                    299
+                ],
+                "expected": [
+                    "忍者之书",
+                    "好友排行",
+                    "训练所"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    398,
+                    505,
+                    71,
+                    86
+                ]
+            }
+        }
+    },
+    "起号05结束": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    876,
+                    2,
+                    262,
+                    125
+                ],
+                "expected": [
+                    "第三关"
+                ]
+            }
+        }
+    }
+}

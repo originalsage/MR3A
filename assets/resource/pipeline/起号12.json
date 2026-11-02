@@ -1,0 +1,252 @@
+{
+    "起号12entry": {
+        "next": [
+            "起号12点击出发",
+            "[JumpBack]起号12点击绝地逃生"
+        ]
+    },
+    "起号12点击绝地逃生": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1035,
+                    139,
+                    181,
+                    432
+                ],
+                "expected": [
+                    "逃生"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 2000
+    },
+    "起号12点击出发": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    868,
+                    543,
+                    333,
+                    159
+                ],
+                "expected": [
+                    "出发"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 2000,
+        "next": [
+            "起号12点击出发",
+            "起号12进入关卡"
+        ]
+    },
+    "起号12进入关卡": {
+        "timeout": 90000,
+        "rate_limit": 500,
+        "next": [
+            "起号12在限定时间",
+            "[JumpBack]起号12俯冲"
+        ]
+    },
+    "起号12发现下滑按钮": {
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": [
+                    230,
+                    612,
+                    1,
+                    1
+                ],
+                "lower": [
+                    [
+                        255,
+                        255,
+                        255
+                    ]
+                ],
+                "upper": [
+                    [
+                        255,
+                        255,
+                        255
+                    ]
+                ]
+            }
+        },
+        "pre_delay": 0,
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "qh_level_2_7",
+                "target": [
+                    230,
+                    612,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_delay": 0,
+        "timeout": 40000,
+        "next": [
+            "起号12死亡再来一次",
+            "起号12结束",
+            "[JumpBack]起号12通关确定",
+            "[JumpBack]起号12首次通关奖励"
+        ]
+    },
+    "起号12俯冲": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    386,
+                    127,
+                    494,
+                    171
+                ],
+                "expected": [
+                    "利用传送门加速逃生",
+                    "俯冲增加速度",
+                    "躲避陷阱"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    200,
+                    620,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_delay": 0,
+        "next": [
+            "起号12跳跃"
+        ]
+    },
+    "起号12跳跃": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1100,
+                    620,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_delay": 0
+    },
+    "起号12首次通关奖励": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    461,
+                    40,
+                    351,
+                    160
+                ],
+                "expected": [
+                    "首次通关奖励"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "起号12通关确定": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    392,
+                    541,
+                    503,
+                    174
+                ],
+                "expected": [
+                    "确定"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "起号12结束": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    894,
+                    8,
+                    235,
+                    126
+                ],
+                "expected": [
+                    "第九关"
+                ]
+            }
+        }
+    },
+    "起号12死亡再来一次": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    643,
+                    512,
+                    339,
+                    168
+                ],
+                "expected": [
+                    "再来一次"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "起号12死亡再来一次",
+            "起号12进入关卡"
+        ]
+    },
+    "起号12在限定时间": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    386,
+                    127,
+                    494,
+                    171
+                ],
+                "expected": [
+                    "限定时间"
+                ]
+            }
+        },
+        "rate_limit": 30,
+        "next": [
+            "起号12发现下滑按钮"
+        ]
+    }
+}
