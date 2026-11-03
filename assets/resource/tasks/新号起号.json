@@ -1,102 +1,124 @@
 {
     "task": [
         {
+            "name": "起号必读",
+            "entry": "起号必读entry",
+            "group": [
+                "新号起号"
+            ],
+            "description": "<span style=\"color:deepskyblue;font-size:15px\">此系列用于从创号一路升至<strong>中忍</strong>，创号推荐使用九游。<br>起号01~14 可按顺序依次运行；若某个任务出错，可手动干预后在对应页面单独运行后续任务。<br><strong>注意</strong>：部分跑图依赖严格的时序点击操作，请尽量保持后台不运行其他占用性能的软件或游戏。</span>"
+        },
+        {
             "name": "起号01",
             "entry": "起号01entry",
             "group": [
                 "新号起号"
-            ]
+            ],
+            "description": "<span style=\"color:deepskyblue;font-size:15px\">此任务请在创号成功后播放忍三动画至屏幕显示「六个月前，忍之谷」之间使用</span>"
         },
         {
             "name": "起号02",
             "entry": "起号02entry",
             "group": [
                 "新号起号"
-            ]
+            ],
+            "description": "<span style=\"color:deepskyblue;font-size:15px\">此任务仅在此页面使用</span><br><img src=\"resource/tasks/images/起号02使用场景.jpg\" style=\"width:50%;height:auto\" />"
         },
         {
             "name": "起号03",
             "entry": "起号03entry",
             "group": [
                 "新号起号"
-            ]
+            ],
+            "description": "<span style=\"color:deepskyblue;font-size:15px\">此任务仅在此页面使用</span><br><img src=\"resource/tasks/images/起号03使用场景.jpg\" style=\"width:50%;height:auto\" />"
         },
         {
             "name": "起号04",
             "entry": "起号04entry",
             "group": [
                 "新号起号"
-            ]
+            ],
+            "description": "<span style=\"color:deepskyblue;font-size:15px\">此任务仅在此页面使用</span><br><img src=\"resource/tasks/images/起号04使用场景.jpg\" style=\"width:50%;height:auto\" />"
         },
         {
             "name": "起号05",
             "entry": "起号05entry",
             "group": [
                 "新号起号"
-            ]
+            ],
+            "description": "<span style=\"color:deepskyblue;font-size:15px\">此任务仅在此页面使用</span><br><img src=\"resource/tasks/images/起号05使用场景.jpg\" style=\"width:50%;height:auto\" />"
         },
         {
             "name": "起号06",
             "entry": "起号06entry",
             "group": [
                 "新号起号"
-            ]
+            ],
+            "description": "<span style=\"color:deepskyblue;font-size:15px\">此任务仅在此页面使用</span><br><img src=\"resource/tasks/images/起号06使用场景.jpg\" style=\"width:50%;height:auto\" />"
         },
         {
             "name": "起号07",
             "entry": "起号07entry",
             "group": [
                 "新号起号"
-            ]
+            ],
+            "description": "<span style=\"color:deepskyblue;font-size:15px\">此任务仅在此页面使用</span><br><img src=\"resource/tasks/images/起号07使用场景.jpg\" style=\"width:50%;height:auto\" />"
         },
         {
             "name": "起号08",
             "entry": "起号08entry",
             "group": [
                 "新号起号"
-            ]
+            ],
+            "description": "<span style=\"color:deepskyblue;font-size:15px\">此任务仅在此页面使用</span><br><img src=\"resource/tasks/images/起号08使用场景.jpg\" style=\"width:50%;height:auto\" />"
         },
         {
             "name": "起号09",
             "entry": "起号09entry",
             "group": [
                 "新号起号"
-            ]
+            ],
+            "description": "<span style=\"color:deepskyblue;font-size:15px\">此任务仅在此页面使用</span><br><img src=\"resource/tasks/images/起号09使用场景.jpg\" style=\"width:50%;height:auto\" />"
         },
         {
             "name": "起号10",
             "entry": "起号10entry",
             "group": [
                 "新号起号"
-            ]
+            ],
+            "description": "<span style=\"color:deepskyblue;font-size:15px\">此任务仅在此页面使用</span><br><img src=\"resource/tasks/images/起号10使用场景.jpg\" style=\"width:50%;height:auto\" />"
         },
         {
             "name": "起号11",
             "entry": "起号11entry",
             "group": [
                 "新号起号"
-            ]
+            ],
+            "description": "<span style=\"color:deepskyblue;font-size:15px\">此任务仅在此页面使用</span><br><img src=\"resource/tasks/images/起号11使用场景.jpg\" style=\"width:50%;height:auto\" />"
         },
         {
             "name": "起号12",
             "entry": "起号12entry",
             "group": [
                 "新号起号"
-            ]
+            ],
+            "description": "<span style=\"color:deepskyblue;font-size:15px\">此任务仅在此页面使用</span><br><img src=\"resource/tasks/images/起号12使用场景.jpg\" style=\"width:50%;height:auto\" />"
         },
         {
             "name": "起号13",
             "entry": "起号13entry",
             "group": [
                 "新号起号"
-            ]
+            ],
+            "description": "<span style=\"color:deepskyblue;font-size:15px\">此任务仅在此页面使用</span><br><img src=\"resource/tasks/images/起号13使用场景.jpg\" style=\"width:50%;height:auto\" />"
         },
         {
             "name": "起号14",
             "entry": "起号14entry",
             "group": [
                 "新号起号"
-            ]
+            ],
+            "description": "<span style=\"color:deepskyblue;font-size:15px\">此任务仅在此页面使用</span><br><img src=\"resource/tasks/images/起号14使用场景.jpg\" style=\"width:50%;height:auto\" />"
         }
     ],
     "option": {}
