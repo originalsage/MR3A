@@ -102,7 +102,11 @@ def ensure_pip(python_executable, python_install_dir):
         print("错误: Python 可执行文件未找到，无法安装 pip。")
         return False
 
-    get_pip_url = "https://bootstrap.pypa.io/get-pip.py"
+    # 固定 get-pip.py 脚本版本：latest 现在内嵌 pip 26.3，其在 Windows 引导时
+    # 会触发 "To modify pip, please run the following command" 的自我保护错误
+    # （pip 26.3 的 protect_pip_from_modification_on_windows 回归）。
+    # 锁定 26.2.2 tag（内嵌 pip 26.2.2，已验证可用）；升级前请先在 CI 验证。
+    get_pip_url = "https://raw.githubusercontent.com/pypa/get-pip/26.2.2/public/get-pip.py"
     # 将 get-pip.py 下载到 Python 安装目录下，执行后再删除
     get_pip_script_path = os.path.join(python_install_dir, "get-pip.py")
 
@@ -116,13 +120,7 @@ def ensure_pip(python_executable, python_install_dir):
     print("正在使用 get-pip.py 安装 pip...")
     try:
         # 在 Python 安装目录下执行 get-pip.py
-        # 固定 pip 版本：pip 26.3 在 Windows 上会触发
-        # "To modify pip, please run the following command" 的自我保护错误，
-        # 导致嵌入式环境引导失败；26.2.2 已验证可用，升级前请先在 CI 验证。
-        subprocess.run(
-            [python_executable, get_pip_script_path, "pip==26.2.2"],
-            check=True,
-        )
+        subprocess.run([python_executable, get_pip_script_path], check=True)
         print("pip 安装成功。")
         return True
     except (subprocess.CalledProcessError, OSError) as e:
