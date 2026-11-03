@@ -1,0 +1,41 @@
+name: Sync fragment roster
+
+# 手动：从 BWiki 刷新「勾玉购买忍者碎片」cases（日常任务.json）。wiki 慢则直接改该 cases。
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Fetch BWiki combat names into checkbox cases
+        run: |
+          echo "Current Date and Time: $(date '+%Y-%m-%d %H:%M:%S')"
+          python3 tools/ci/update_fragment_roster.py
+
+      - name: Check if task options changed
+        id: check
+        run: |
+          if [[ -n "$(git status --porcelain -- assets/resource/tasks/日常任务.json)" ]]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No changes to commit"
+          fi
+
+      - name: Commit and push
+        if: steps.check.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/resource/tasks/日常任务.json
+          git commit -m "chore: sync mystery-shop fragment options from BWiki"
+          git pull origin "$(git rev-parse --abbrev-ref HEAD)" --rebase
+          git push
