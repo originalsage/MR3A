@@ -89,7 +89,7 @@
         {
             "name": "藏宝图",
             "entry": "藏宝图entry",
-            "description": "<span style=\"color:deepskyblue;font-size:15px\">未编写停止逻辑，请刷取够后自行停止</span>",
+            "description": "<span style=\"color:deepskyblue;font-size:15px\">未编写停止逻辑，请刷取够后自行停止，地区页面只刷神品且效率更高</span>",
             "option": [
                 "刷取位置"
             ],
