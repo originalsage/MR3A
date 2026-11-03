@@ -1,24 +1,4 @@
 {
-    "悬赏商店右滑次数过多退出商店重试": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    0,
-                    0,
-                    125,
-                    100
-                ],
-                "template": [
-                    "返回按钮.png"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "post_delay": 2000
-    },
     "C级悬赏奖册下方是已购买": {
         "recognition": {
             "type": "OCR",
@@ -129,7 +109,7 @@
             "C级悬赏奖册已购买",
             "悬赏商店忍币不足",
             "悬赏商店识别到购买",
-            "[JumpBack]悬赏商店点击D级悬赏奖册",
+            "[JumpBack]悬赏商店点击未购买的D级悬赏奖册",
             "[JumpBack]悬赏商店点击C级悬赏奖册",
             "再次点击悬赏商店"
         ]
@@ -281,6 +261,51 @@
             "重置节点悬赏商店右滑计数"
         ]
     },
+    "悬赏商店右滑次数过多退出商店重试": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    125,
+                    100
+                ],
+                "template": [
+                    "返回按钮.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 2000
+    },
+    "悬赏商店右滑计数": {
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "Count",
+                "custom_recognition_param": {
+                    "target": 15
+                }
+            }
+        },
+        "next": [
+            "处理悬赏商店任务"
+        ]
+    },
+    "悬赏商店完成关闭节点悬赏商店任务": {
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "DisableNode",
+                "custom_action_param": {
+                    "node_name": "悬赏商店任务"
+                }
+            }
+        }
+    },
     "悬赏商店忍币不足": {
         "recognition": {
             "type": "OCR",
@@ -311,6 +336,42 @@
         "next": [
             "悬赏商店完成关闭节点悬赏商店任务"
         ]
+    },
+    "悬赏商店点击C级悬赏奖册": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    2,
+                    106,
+                    1091,
+                    103
+                ],
+                "expected": [
+                    "C级悬赏奖册"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 1000
+    },
+    "悬赏商店点击未购买的D级悬赏奖册": {
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "悬赏商店识别到D级悬赏奖册",
+                    "悬赏商店D级悬赏奖册下方有剩余次数"
+                ],
+                "box_index": 0
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 1000
     },
     "悬赏商店点击可领取": {
         "recognition": {
@@ -351,7 +412,7 @@
         },
         "post_delay": 1000
     },
-    "悬赏商店点击C级悬赏奖册": {
+    "悬赏商店识别到C级悬赏奖册": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -365,31 +426,7 @@
                     "C级悬赏奖册"
                 ]
             }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "post_delay": 1000
-    },
-    "悬赏商店点击D级悬赏奖册": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    2,
-                    106,
-                    1091,
-                    103
-                ],
-                "expected": [
-                    "D级悬赏奖册"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "post_delay": 1000
+        }
     },
     "悬赏商店识别到购买": {
         "recognition": {
@@ -397,9 +434,9 @@
             "param": {
                 "roi": [
                     406,
-                    408,
+                    618,
                     455,
-                    311
+                    91
                 ],
                 "expected": [
                     "^购买$"
@@ -1392,6 +1429,20 @@
             "[JumpBack]back"
         ]
     },
+    "重置节点悬赏商店右滑计数": {
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "ResetCount",
+                "custom_action_param": {
+                    "node_name": "悬赏商店右滑计数"
+                }
+            }
+        },
+        "next": [
+            "悬赏商店右滑次数过多退出商店重试"
+        ]
+    },
     "重置节点神秘商店商品0节点计数器": {
         "pre_delay": 0,
         "action": {
@@ -1493,7 +1544,7 @@
         },
         "post_delay": 0
     },
-    "悬赏商店识别到C级悬赏奖册": {
+    "悬赏商店识别到D级悬赏奖册": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1504,48 +1555,31 @@
                     103
                 ],
                 "expected": [
-                    "C级悬赏奖册"
+                    "D级悬赏奖册"
                 ]
             }
-        }
+        },
+        "pre_delay": 0,
+        "post_delay": 0
     },
-    "悬赏商店右滑计数": {
+    "悬赏商店D级悬赏奖册下方有剩余次数": {
         "recognition": {
-            "type": "Custom",
+            "type": "OCR",
             "param": {
-                "custom_recognition": "Count",
-                "custom_recognition_param": {
-                    "target": 15
-                }
+                "roi": "悬赏商店识别到D级悬赏奖册",
+                "roi_offset": [
+                    -49,
+                    374,
+                    69,
+                    99
+                ],
+                "expected": [
+                    "今日剩余2次",
+                    "今日剩余1次"
+                ]
             }
         },
-        "next": [
-            "处理悬赏商店任务"
-        ]
-    },
-    "重置节点悬赏商店右滑计数": {
-        "action": {
-            "type": "Custom",
-            "param": {
-                "custom_action": "ResetCount",
-                "custom_action_param": {
-                    "node_name": "悬赏商店右滑计数"
-                }
-            }
-        },
-        "next": [
-            "悬赏商店右滑次数过多退出商店重试"
-        ]
-    },
-    "悬赏商店完成关闭节点悬赏商店任务": {
-        "action": {
-            "type": "Custom",
-            "param": {
-                "custom_action": "DisableNode",
-                "custom_action_param": {
-                    "node_name": "悬赏商店任务"
-                }
-            }
-        }
+        "pre_delay": 0,
+        "post_delay": 0
     }
 }
