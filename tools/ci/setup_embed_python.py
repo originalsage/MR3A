@@ -116,7 +116,13 @@ def ensure_pip(python_executable, python_install_dir):
     print("正在使用 get-pip.py 安装 pip...")
     try:
         # 在 Python 安装目录下执行 get-pip.py
-        subprocess.run([python_executable, get_pip_script_path], check=True)
+        # 固定 pip 版本：pip 26.3 在 Windows 上会触发
+        # "To modify pip, please run the following command" 的自我保护错误，
+        # 导致嵌入式环境引导失败；26.2.2 已验证可用，升级前请先在 CI 验证。
+        subprocess.run(
+            [python_executable, get_pip_script_path, "pip==26.2.2"],
+            check=True,
+        )
         print("pip 安装成功。")
         return True
     except (subprocess.CalledProcessError, OSError) as e:
