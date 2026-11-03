@@ -1,11 +1,11 @@
 {
-    "巡逻上滑": {
+    "巡逻下滑计数": {
         "recognition": {
             "type": "Custom",
             "param": {
                 "custom_recognition": "Count",
                 "custom_recognition_param": {
-                    "target": 1
+                    "target": 5
                 }
             }
         },
@@ -13,51 +13,25 @@
             "type": "Swipe",
             "param": {
                 "begin": [
-                    666,
-                    222,
-                    1,
-                    1
+                    650,
+                    510,
+                    73,
+                    47
                 ],
                 "end": [
                     [
-                        666,
-                        555,
-                        1,
-                        1
+                        668,
+                        320,
+                        65,
+                        52
                     ]
+                ],
+                "end_hold": [
+                    500
                 ]
-            }
-        }
-    },
-    "巡逻下滑": {
-        "recognition": {
-            "type": "Custom",
-            "param": {
-                "custom_recognition": "Count",
-                "custom_recognition_param": {
-                    "target": 1
-                }
             }
         },
-        "action": {
-            "type": "Swipe",
-            "param": {
-                "begin": [
-                    666,
-                    555,
-                    1,
-                    1
-                ],
-                "end": [
-                    [
-                        666,
-                        222,
-                        1,
-                        1
-                    ]
-                ]
-            }
-        }
+        "post_delay": 500
     },
     "巡逻奖励确定": {
         "recognition": {
@@ -284,6 +258,22 @@
             "退出巡逻并任务结束"
         ]
     },
+    "点击通灵兽图片": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "主页通灵兽.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "通灵兽巡逻页面"
+        ]
+    },
     "点击通灵兽文字": {
         "recognition": {
             "type": "OCR",
@@ -402,10 +392,41 @@
                 ]
             }
         },
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    630,
+                    171,
+                    51,
+                    46
+                ],
+                "end": [
+                    [
+                        633,
+                        536,
+                        62,
+                        43
+                    ]
+                ],
+                "end_hold": [
+                    500
+                ]
+            }
+        },
+        "post_wait_freezes": {
+            "time": 300,
+            "target": [
+                592,
+                192,
+                300,
+                189
+            ]
+        },
+        "post_delay": 700,
         "next": [
             "选择巡逻关卡",
-            "[JumpBack]巡逻下滑",
-            "[JumpBack]巡逻上滑"
+            "[JumpBack]巡逻下滑计数"
         ]
     },
     "退出巡逻并任务结束": {
@@ -720,22 +741,6 @@
         "post_delay": 500,
         "next": [
             "退出巡逻并任务结束"
-        ]
-    },
-    "点击通灵兽图片": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "template": [
-                    "主页通灵兽.png"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "next": [
-            "通灵兽巡逻页面"
         ]
     }
 }
