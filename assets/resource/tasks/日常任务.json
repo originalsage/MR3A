@@ -252,6 +252,18 @@
                             }
                         }
                     }
+                },
+                {
+                    "name": "联想",
+                    "pipeline_override": {
+                        "启动应用": {
+                            "action": {
+                                "param": {
+                                    "package": "com.pandadastudio.ninjamustdie3.lenovo"
+                                }
+                            }
+                        }
+                    }
                 }
             ]
         },
