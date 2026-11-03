@@ -109,7 +109,7 @@
             "group": [
                 "daily"
             ],
-            "description": "<span style=\"color:tomato;font-size:15px\">当前 3v3只支持困难图，依赖固定延时点击，由于不同设备延迟和网速不同，<strong>不保证可用性</strong>，如果p1跑图失败<strong>建议停用</strong></span>"
+            "description": "<span style=\"color:tomato;font-size:15px\">当前 3v3 只支持困难图，会使用第一套卡组建议被动带不灭。依赖固定延时点击，由于不同设备延迟和网速不同，<strong>不保证可用性</strong>，如果p1跑图失败<strong>建议停用</strong></span>"
         },
         {
             "name": "领取奖励",
