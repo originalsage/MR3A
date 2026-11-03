@@ -574,7 +574,7 @@
             "type": "Click",
             "param": {
                 "target": [
-                    400,
+                    375,
                     305,
                     1,
                     1
@@ -583,7 +583,7 @@
         },
         "repeat": 8,
         "repeat_delay": 100,
-        "post_delay": 100
+        "post_delay": 0
     },
     "每周逆袭悬赏点击悬赏令页面": {
         "recognition": {
@@ -762,7 +762,7 @@
             "type": "Click",
             "param": {
                 "target": [
-                    400,
+                    375,
                     305,
                     1,
                     1
