@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""对两个 ROI 分别 OCR，仅当两者识别结果一致时才命中的 CustomRecognition。"""
+"""对两个 ROI 分别 OCR，仅当两者识别结果前缀一致时才命中的 CustomRecognition。"""
 
 from __future__ import annotations
 
@@ -47,13 +47,14 @@ def _collect_text(detail: Optional[RecognitionDetail]) -> str:
 @AgentServer.custom_recognition("OcrConsistency")
 class OcrConsistency(CustomRecognition):
     """
-    对两个 ROI 分别做一次 OCR，仅当两个区域的识别结果一致时才命中。
+    对两个 ROI 分别做一次 OCR，仅当两个区域的识别结果前缀一致时才命中。
 
     参数格式:
     {
         "roi_a": [x, y, w, h],
         "roi_b": [x, y, w, h],
         "threshold": 0.3,
+        "prefix_len": 3,
         "strict": false,
         "return_box": "a"
     }
@@ -62,9 +63,10 @@ class OcrConsistency(CustomRecognition):
     - roi_a: 第一个 OCR 区域，必填，格式 [x, y, w, h]。
     - roi_b: 第二个 OCR 区域，必填，格式 [x, y, w, h]。
     - threshold: OCR 阈值，可选，默认 0.3。
+    - prefix_len: 比较的前缀字符数，可选，默认 3（即两个文本前 3 个字符相同即命中）。
     - strict: 是否严格比较，可选，默认 false。
-      - false: 规范化后比较（去标点/空白、大小写归一），对 OCR 细微差异更鲁棒。
-      - true: 仅 strip 首尾空白后直接比较，要求完全一致。
+      - false: 规范化后（去标点/空白、大小写归一）取前 prefix_len 个字符比较，对 OCR 细微差异更鲁棒。
+      - true: 仅 strip 首尾空白后取前 prefix_len 个字符比较。
     - return_box: 命中后返回的 ROI，可选，默认 "a"。
       - "a": 返回 roi_a
       - "b": 返回 roi_b
@@ -90,6 +92,7 @@ class OcrConsistency(CustomRecognition):
                 return None
 
             threshold = float(param.get("threshold", 0.3))
+            prefix_len = int(param.get("prefix_len", 3))
             strict = bool(param.get("strict", False))
             return_box = str(param.get("return_box", "a")).lower()
 
@@ -103,9 +106,13 @@ class OcrConsistency(CustomRecognition):
                 return None
 
             if strict:
-                matched = text_a.strip() == text_b.strip()
+                ta = text_a.strip()
+                tb = text_b.strip()
             else:
-                matched = normalize_text(text_a) == normalize_text(text_b)
+                ta = normalize_text(text_a)
+                tb = normalize_text(text_b)
+
+            matched = ta[:prefix_len] == tb[:prefix_len]
 
             if not matched:
                 logger.debug(f"OcrConsistency: 不一致 a={text_a!r} b={text_b!r}")
