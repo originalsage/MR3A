@@ -460,7 +460,10 @@
                     "设置1.png",
                     "设置.png"
                 ],
-                "green_mask": true
+                "green_mask": true,
+                "threshold": [
+                    0.62
+                ]
             }
         },
         "pre_delay": 0,
