@@ -1,0 +1,278 @@
+{
+    "账号登录识别页": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    1280,
+                    720
+                ],
+                "expected": [
+                    "账密登录",
+                    "请输入登录密码",
+                    "验证码登录",
+                    "找回密码",
+                    "同意并继续"
+                ],
+                "threshold": 0.3
+            }
+        },
+        "timeout": 15000,
+        "on_error": [
+            "账号登录失败"
+        ],
+        "next": [
+            "账号登录同意隐私",
+            "账号登录点击账密登录",
+            "账号登录识别账号页"
+        ]
+    },
+    "账号登录同意隐私": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    1280,
+                    720
+                ],
+                "expected": [
+                    "^同意并继续$"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 800,
+        "timeout": 10000,
+        "on_error": [
+            "账号登录失败"
+        ],
+        "next": [
+            "账号登录识别账号页"
+        ]
+    },
+    "账号登录点击账密登录": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    1280,
+                    720
+                ],
+                "expected": [
+                    "^账密登录$"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 800,
+        "timeout": 15000,
+        "on_error": [
+            "账号登录失败"
+        ],
+        "next": [
+            "账号登录同意隐私",
+            "账号登录识别账号页"
+        ]
+    },
+    "账号登录识别账号页": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    1280,
+                    720
+                ],
+                "expected": [
+                    "请输入登录密码",
+                    "验证码登录",
+                    "找回密码"
+                ]
+            }
+        },
+        "timeout": 10000,
+        "on_error": [
+            "账号登录失败"
+        ],
+        "next": [
+            "账号登录点击账号框",
+            "账号登录点击密码框"
+        ]
+    },
+    "账号登录点击账号框": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    1280,
+                    720
+                ],
+                "expected": [
+                    "请输入登录账号"
+                ],
+                "order_by": "Vertical",
+                "index": 0
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 600,
+        "timeout": 8000,
+        "on_error": [
+            "账号登录失败"
+        ],
+        "next": [
+            "账号登录输入账号"
+        ]
+    },
+    "账号登录输入账号": {
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "SecureTextInput",
+                "custom_action_param": {
+                    "field": "account"
+                }
+            }
+        },
+        "post_delay": 600,
+        "timeout": 8000,
+        "on_error": [
+            "账号登录失败"
+        ],
+        "next": [
+            "账号登录点击密码框"
+        ]
+    },
+    "账号登录点击密码框": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    1280,
+                    720
+                ],
+                "expected": [
+                    "请输入登录密码"
+                ],
+                "order_by": "Vertical",
+                "index": -1
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 600,
+        "timeout": 8000,
+        "on_error": [
+            "账号登录失败"
+        ],
+        "next": [
+            "账号登录输入密码"
+        ]
+    },
+    "账号登录输入密码": {
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "SecureTextInput",
+                "custom_action_param": {
+                    "field": "password"
+                }
+            }
+        },
+        "post_delay": 600,
+        "timeout": 8000,
+        "on_error": [
+            "账号登录失败"
+        ],
+        "next": [
+            "账号登录收起键盘"
+        ]
+    },
+    "账号登录收起键盘": {
+        "action": {
+            "type": "ClickKey",
+            "param": {
+                "key": 4
+            }
+        },
+        "post_delay": 500,
+        "on_error": [
+            "账号登录失败"
+        ],
+        "next": [
+            "账号登录提交"
+        ]
+    },
+    "账号登录提交": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    1280,
+                    720
+                ],
+                "expected": [
+                    "^登录$"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 3000,
+        "timeout": 10000,
+        "on_error": [
+            "账号登录失败"
+        ],
+        "next": [
+            "账号登录完成"
+        ]
+    },
+    "账号登录完成": {
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "DisableNode",
+                "custom_action_param": {
+                    "node_name": "账号登录识别页"
+                }
+            }
+        },
+        "focus": "✅ 官服账号密码已提交"
+    },
+    "账号登录失败": {
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "DisableNode",
+                "custom_action_param": {
+                    "node_name": "账号登录识别页"
+                }
+            }
+        },
+        "focus": "⚠️ 账号密码登录未完成（超时/文案不匹配），已跳过本次接管"
+    },
+    "账号登录跳过": {
+        "focus": "未检测到账号密码页，按原流程继续"
+    }
+}
