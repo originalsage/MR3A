@@ -50,6 +50,10 @@
                 {
                     "name": "情报模拟战",
                     "enabled": false
+                },
+                {
+                    "name": "须弥幻境",
+                    "enabled": false
                 }
             ]
         }

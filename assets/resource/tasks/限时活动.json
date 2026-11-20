@@ -129,6 +129,13 @@
                 "限时活动"
             ],
             "description": "<span style=\"color:deepskyblue;font-size:15px\">不建议使用体验忍者，较差的设备有概率误点勾玉接力</span>"
+        },
+        {
+            "name": "须弥幻境",
+            "entry": "须弥幻境entry",
+            "group": [
+                "限时活动"
+            ]
         }
     ],
     "option": {
