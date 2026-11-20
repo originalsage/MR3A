@@ -111,6 +111,24 @@
             "group": [
                 "限时活动"
             ]
+        },
+        {
+            "name": "情报模拟战",
+            "entry": "情报模拟战entry",
+            "option": [
+                "情报模拟战运行方式"
+            ],
+            "group": [
+                "限时活动"
+            ]
+        },
+        {
+            "name": "决胜狭路",
+            "entry": "决胜狭路entry",
+            "group": [
+                "限时活动"
+            ],
+            "description": "<span style=\"color:deepskyblue;font-size:15px\">不建议使用体验忍者，较差的设备有概率误点勾玉接力</span>"
         }
     ],
     "option": {
@@ -1291,6 +1309,42 @@
                             "attach": {
                                 "凡品雷王山": true
                             }
+                        }
+                    }
+                }
+            ]
+        },
+        "情报模拟战运行方式": {
+            "type": "select",
+            "label": "运行方式",
+            "default_case": "完成每日任务",
+            "cases": [
+                {
+                    "name": "完成每日任务",
+                    "pipeline_override": {
+                        "情报模拟战一直刷": {
+                            "enabled": false
+                        },
+                        "情报模拟战点击卡牌": {
+                            "expected": [
+                                "老板娘",
+                                "忍村5虎",
+                                "上场"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "一直刷",
+                    "pipeline_override": {
+                        "情报模拟战一直刷": {
+                            "enabled": true
+                        },
+                        "情报模拟战点击卡牌": {
+                            "expected": [
+                                "老板娘",
+                                "忍村5虎"
+                            ]
                         }
                     }
                 }

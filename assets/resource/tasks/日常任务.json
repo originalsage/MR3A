@@ -96,14 +96,6 @@
             ]
         },
         {
-            "name": "决胜狭路",
-            "entry": "决胜狭路entry",
-            "group": [
-                "daily"
-            ],
-            "description": "<span style=\"color:deepskyblue;font-size:15px\">不建议使用体验忍者，较差的设备有概率误点勾玉接力</span>"
-        },
-        {
             "name": "3v3（仅支持困难图）",
             "entry": "3v3entry",
             "group": [

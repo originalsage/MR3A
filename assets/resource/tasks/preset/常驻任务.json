@@ -16,7 +16,8 @@
                     "enabled": false
                 },
                 {
-                    "name": "备战副本"
+                    "name": "备战副本",
+                    "enabled": false
                 },
                 {
                     "name": "地区首领",
