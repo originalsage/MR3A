@@ -20,7 +20,7 @@ on:
   workflow_dispatch:
 env:
   MAA_FRAMEWORK_VERSION: "v5.16.1"
-  MFA_VERSION: "v2.16.6-mr3a.2"
+  MFA_VERSION: "v2.16.6-mr3a.3"
 permissions:
   contents: write
   actions: write
