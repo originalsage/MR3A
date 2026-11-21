@@ -19,8 +19,8 @@ on:
       - "**.py"
   workflow_dispatch:
 env:
-  MAA_FRAMEWORK_VERSION: "v5.12.2"
-  MFA_VERSION: "v2.16.1-beta.1"
+  MAA_FRAMEWORK_VERSION: "v5.16.1"
+  MFA_VERSION: "v2.16.6-mr3a.1"
 permissions:
   contents: write
   actions: write
@@ -111,7 +111,7 @@ jobs:
         id: download_mfa
         uses: robinraju/release-downloader@v1
         with:
-          repository: MaaXYZ/MFAAvalonia
+          repository: originalsage/MFAAvalonia
           fileName: "MFAAvalonia-*-win-${{ steps.platform.outputs.tag }}*"
           tag: ${{ env.MFA_VERSION }}
           out-file-path: "MFA"
@@ -236,7 +236,7 @@ jobs:
         id: download_mfa
         uses: robinraju/release-downloader@v1
         with:
-          repository: MaaXYZ/MFAAvalonia
+          repository: originalsage/MFAAvalonia
           fileName: "MFAAvalonia-*-linux-${{ steps.platform.outputs.tag }}*"
           tag: ${{ env.MFA_VERSION }}
           out-file-path: "MFA"
@@ -353,7 +353,7 @@ jobs:
         id: download_mfa
         uses: robinraju/release-downloader@v1
         with:
-          repository: MaaXYZ/MFAAvalonia
+          repository: originalsage/MFAAvalonia
           fileName: "MFAAvalonia-*-osx-${{ steps.platform.outputs.tag }}*"
           tag: ${{ env.MFA_VERSION }}
           out-file-path: "MFA"
