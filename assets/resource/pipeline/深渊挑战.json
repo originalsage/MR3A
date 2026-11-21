@@ -109,31 +109,6 @@
             "使能节点深渊挑战寻找队伍右滑"
         ]
     },
-    "卡牌槽下方有文字": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": "识别到未选择的卡牌槽",
-                "roi_offset": [
-                    -75,
-                    426,
-                    120,
-                    60
-                ],
-                "expected": [
-                    ".*"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        }
-    },
-    "卡牌槽下方没文字": {
-        "next": [
-            "退出深渊选卡"
-        ]
-    },
     "尝试进入深渊挑战主页": {
         "next": [
             "[JumpBack]深渊挑战进入家族",
@@ -202,29 +177,6 @@
         ]
     },
     "深渊冒险主页没有深渊挑战按钮": {},
-    "深渊卡选卡点击装备": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    785,
-                    470,
-                    275,
-                    170
-                ],
-                "expected": [
-                    "装备"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "next": [
-            "点击装备后选择未选择的卡槽",
-            "点击装备后没有未选择的卡槽"
-        ]
-    },
     "深渊卡选卡页面": {
         "recognition": {
             "type": "OCR",
@@ -244,8 +196,7 @@
             "[JumpBack]深渊卡选卡页面出现结算确定弹窗",
             "选卡回到队伍页面了",
             "[JumpBack]意外出现相同的装备卡",
-            "[JumpBack]深渊卡选卡点击装备",
-            "[JumpBack]识别到未选择的卡牌槽",
+            "[JumpBack]深渊挑战点击一键装配",
             "[JumpBack]退出深渊选卡"
         ]
     },
@@ -695,6 +646,22 @@
             "type": "Click"
         }
     },
+    "深渊挑战识别到深渊卡": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    832,
+                    609,
+                    135,
+                    99
+                ],
+                "expected": [
+                    "深渊卡"
+                ]
+            }
+        }
+    },
     "深渊挑战识别到深渊卡并且时间大于预期": {
         "recognition": {
             "type": "And",
@@ -786,6 +753,17 @@
             "type": "Click"
         }
     },
+    "深渊挑战选卡时间": {
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "TimeAfter",
+                "custom_recognition_param": {
+                    "time": "20:20"
+                }
+            }
+        }
+    },
     "深渊挑战降低fight识别速度": {
         "recognition": {
             "type": "TemplateMatch",
@@ -866,50 +844,6 @@
             "time": 500,
             "threshold": 0.8
         }
-    },
-    "点击装备后没有未选择的卡槽": {
-        "next": [
-            "退出深渊选卡"
-        ]
-    },
-    "点击装备后选择未选择的卡槽": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    18,
-                    76,
-                    1247,
-                    271
-                ],
-                "expected": [
-                    "未选择"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        }
-    },
-    "识别到未选择的卡牌槽": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    18,
-                    76,
-                    1247,
-                    271
-                ],
-                "expected": [
-                    "未选择"
-                ]
-            }
-        },
-        "next": [
-            "卡牌槽下方有文字",
-            "卡牌槽下方没文字"
-        ]
     },
     "识别到深渊卡后未识别到准备和取消准备": {},
     "识别到深渊卡后识别到准备则点击深渊卡": {
@@ -1027,7 +961,8 @@
         },
         "action": {
             "type": "Click"
-        }
+        },
+        "post_delay": 1000
     },
     "重置深渊挑战内部节点计数器": {
         "action": {
@@ -1055,31 +990,27 @@
             }
         }
     },
-    "深渊挑战识别到深渊卡": {
+    "深渊挑战点击一键装配": {
         "recognition": {
             "type": "OCR",
             "param": {
                 "roi": [
-                    832,
-                    609,
-                    135,
-                    99
+                    859,
+                    290,
+                    416,
+                    167
                 ],
                 "expected": [
-                    "深渊卡"
+                    "一键装配"
                 ]
             }
-        }
-    },
-    "深渊挑战选卡时间": {
-        "recognition": {
-            "type": "Custom",
-            "param": {
-                "custom_recognition": "TimeAfter",
-                "custom_recognition_param": {
-                    "time": "20:20"
-                }
-            }
-        }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 800,
+        "next": [
+            "退出深渊选卡"
+        ]
     }
 }
