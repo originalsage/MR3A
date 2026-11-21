@@ -503,7 +503,7 @@
         "action": {
             "type": "Click"
         },
-        "post_delay": 2000
+        "post_delay": 5000
     },
     "须弥幻境无法进入关卡": {
         "recognition": {
@@ -854,7 +854,7 @@
         "action": {
             "type": "Click"
         },
-        "post_delay": 2000
+        "post_delay": 5000
     },
     "须弥幻境大千试炼点击确定": {
         "recognition": {
